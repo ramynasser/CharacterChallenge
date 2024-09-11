@@ -27,7 +27,7 @@ public struct RemoteCharacterDataSource: CharacterDataSourceProtocol {
     public func getListing(
         _ input: GetCharacterRepoInput
     ) async -> Result<CharactersListResponse, CharacterError> {
-        let endpoint = CharacterEndpoint.listing(page: input.page)
+        let endpoint = CharacterEndpoint.listing(page: input.page, status: input.status)
         let result: Result<CharactersListResponse.DTO, NetworkRequestError<CharacterError.DTO>>
         result = await networkingManger.executeRequest(endpoint,
                                                        appErrors: nil).result

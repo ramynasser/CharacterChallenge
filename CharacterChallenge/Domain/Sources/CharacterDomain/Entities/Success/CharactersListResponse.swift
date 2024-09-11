@@ -7,7 +7,7 @@
 
 import Foundation
 public struct CharactersListResponse: Codable {
-    public var info: Info
+    public var info: Info?
     public var results: [CharacterDetails]
 
     public init(

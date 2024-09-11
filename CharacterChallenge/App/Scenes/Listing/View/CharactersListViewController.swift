@@ -41,7 +41,9 @@ class CharactersListViewController: UIViewController {
     }
    
     private func setupTableView() {
-        charactersTableView.register(CharacterTableViewCell.self, forCellReuseIdentifier: cellReuseID)
+        charactersTableView.register(
+            BaseTableViewCell.self, forCellReuseIdentifier: cellReuseID
+        )
         charactersTableView.delegate = self
         charactersTableView.dataSource = self
     }
@@ -80,7 +82,7 @@ extension CharactersListViewController: UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let character = viewModel.characters[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseID, for: indexPath) as! CharacterTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseID, for: indexPath) as! BaseTableViewCell
         cell.contentConfiguration = UIHostingConfiguration(content: {
             CharacterItemView(character: character)
         })
@@ -91,13 +93,45 @@ extension CharactersListViewController: UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
     }
-}
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let lastSectionIndex = tableView.numberOfSections - 1
+        let lastRowIndex = tableView.numberOfRows(inSection: lastSectionIndex) - 1
+        if indexPath.section ==  lastSectionIndex && indexPath.row == lastRowIndex {
+           // print("this is the last cell")
+            let spinner = UIActivityIndicatorView(style: .gray)
+            spinner.startAnimating()
+            spinner.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: tableView.bounds.width, height: CGFloat(44))
 
-class CharacterTableViewCell: UITableViewCell {
-
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        // Clear the SwiftUI content to avoid incorrect data display during reuse
-        self.contentConfiguration = nil
+            self.charactersTableView.tableFooterView = spinner
+            self.charactersTableView.tableFooterView?.isHidden = false
+        }
     }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let isReachingEnd = scrollView.isReachingEnd
+        if isReachingEnd {
+            viewModel.didFinishScroll()
+        }
+    }
+}
+extension UIScrollView {
+    var isReachingEnd: Bool {
+        let isReachingEnd = self.contentOffset.y >= 0
+              && self.contentOffset.y >= (self.contentSize.height - self.frame.size.height)
+        return isReachingEnd
+    }
+}
+extension UITableView {
+  func showLoadingFooter() {
+    let spinner = UIActivityIndicatorView(style: .gray)
+    spinner.startAnimating()
+    spinner.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: self.bounds.width, height: CGFloat(44))
+
+    self.tableFooterView = spinner
+    self.tableFooterView?.isHidden = false
+  }
+  
+  func hideLoadingFooter() {
+    self.tableFooterView?.isHidden = true
+    self.tableFooterView = nil
+  }
 }

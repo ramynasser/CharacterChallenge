@@ -11,7 +11,7 @@ import CharacterDomain
 import Networking
 
 enum CharacterEndpoint {
-    case listing(page: Int)
+    case listing(page: Int, status: CharacterStatus?)
     case details(id: Int)
 }
 
@@ -40,8 +40,11 @@ extension CharacterEndpoint: RemoteEndpoint {
     var requestTask: RequestParameterTask {
         var param = NetworkHTTPParameters()
         switch self {
-        case let .listing(page):
+        case let .listing(page, status):
             param["page"] = page
+            if let status = status {
+                param["status"] = status
+            }
         default:
             break
         }

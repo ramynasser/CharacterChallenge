@@ -15,8 +15,10 @@ public protocol Pagable {
 
 public struct GetCharacterUseCaseInput: GetCharacterUseCaseInputProtocol {
     public var page: Int
-
-    public init(page: Int = 1) {
+    public var status: CharacterStatus?
+    
+    public init(page: Int = 1, status: CharacterStatus? = nil) {
         self.page = page
+        self.status = status
     }
 }

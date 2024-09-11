@@ -14,9 +14,13 @@ final class CharactersListViewModel: LoadableObject {
 
     private let useCase: GetCharacterListUseCaseProtocol
     var characters: [CharacterModel] = []
+    var filters: [CharacterStatus] = []
 
     var currentPage: Int = 1
+    var totalPages: Int = 0
     @Published var isListFullLoaded = false
+    @Published var selectedFilter: CharacterStatus?
+
     var viewDidLoad: PassthroughSubject<Void, Never> = .init()
 
     private var cancellables = Set<AnyCancellable>()
@@ -30,7 +34,20 @@ final class CharactersListViewModel: LoadableObject {
             await self.fetchCharacters(showLoading: true)
         }
     }
+    func didFinishScroll() {
+        guard isListFullLoaded == false else {
+            return
+        }
 
+        if currentPage < totalPages {
+            currentPage += 1
+            Task {
+                await self.fetchCharacters(showLoading: false)
+            }
+        }
+
+        isListFullLoaded = currentPage == totalPages
+    }
     func fetchCharacters(showLoading: Bool) async {
         if showLoading {
             await MainActor.run {
@@ -53,8 +70,6 @@ final class CharactersListViewModel: LoadableObject {
                 return
             }
 
-            currentPage = currentPage + 1
-
             self.characters.append(contentsOf: chars.map {
                 CharacterModel(
                     name: $0.name ?? "",
@@ -65,7 +80,10 @@ final class CharactersListViewModel: LoadableObject {
                     image: $0.image ?? ""
                 )
             })
-            state = .loaded(self.characters)
+            self.totalPages = response.info?.pages ?? 0
+            DispatchQueue.main.async {
+                self.state = .loaded(self.characters)
+            }
         case .failure:
             state = .failed(CharacterError.unknown)
         }

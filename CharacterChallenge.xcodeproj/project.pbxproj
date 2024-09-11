@@ -37,6 +37,9 @@
 		5D092E932C91E6EB008CFB8E /* CharactersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D092E922C91E6EB008CFB8E /* CharactersListViewModel.swift */; };
 		5D092E962C91E7A8008CFB8E /* CharacterItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D092E952C91E7A8008CFB8E /* CharacterItemView.swift */; };
 		5D092E992C91E9FA008CFB8E /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D092E982C91E9FA008CFB8E /* CharacterModel.swift */; };
+		5D092EB72C924499008CFB8E /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D092EB62C924499008CFB8E /* BaseTableViewCell.swift */; };
+		5D092EB92C92461C008CFB8E /* FilterItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D092EB82C92461C008CFB8E /* FilterItemView.swift */; };
+		5D092ECA2C924D99008CFB8E /* netfox in Frameworks */ = {isa = PBXBuildFile; productRef = 5D092EC92C924D99008CFB8E /* netfox */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +85,8 @@
 		5D092E922C91E6EB008CFB8E /* CharactersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListViewModel.swift; sourceTree = "<group>"; };
 		5D092E952C91E7A8008CFB8E /* CharacterItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterItemView.swift; sourceTree = "<group>"; };
 		5D092E982C91E9FA008CFB8E /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
+		5D092EB62C924499008CFB8E /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		5D092EB82C92461C008CFB8E /* FilterItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D092ECA2C924D99008CFB8E /* netfox in Frameworks */,
 				5D092E652C91DEB8008CFB8E /* CharacterDomain in Frameworks */,
 				5D092E6C2C91DEE6008CFB8E /* ConfigData in Frameworks */,
 				5D092E622C91DE63008CFB8E /* DesignSystem in Frameworks */,
@@ -290,6 +296,8 @@
 			isa = PBXGroup;
 			children = (
 				5D092E952C91E7A8008CFB8E /* CharacterItemView.swift */,
+				5D092EB62C924499008CFB8E /* BaseTableViewCell.swift */,
+				5D092EB82C92461C008CFB8E /* FilterItemView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -335,6 +343,7 @@
 				5D092E662C91DEB8008CFB8E /* CoreDomain */,
 				5D092E692C91DEE6008CFB8E /* CharacterData */,
 				5D092E6B2C91DEE6008CFB8E /* ConfigData */,
+				5D092EC92C924D99008CFB8E /* netfox */,
 			);
 			productName = CharacterChallenge;
 			productReference = 5D092E242C91DC0D008CFB8E /* CharacterChallenge.app */;
@@ -413,6 +422,7 @@
 				5D092E5E2C91DE63008CFB8E /* XCLocalSwiftPackageReference "CharacterChallenge/DesignSystem" */,
 				5D092E632C91DEB8008CFB8E /* XCLocalSwiftPackageReference "CharacterChallenge/Domain" */,
 				5D092E682C91DEE6008CFB8E /* XCLocalSwiftPackageReference "CharacterChallenge/Data" */,
+				5D092EC82C924D99008CFB8E /* XCRemoteSwiftPackageReference "netfox" */,
 			);
 			productRefGroup = 5D092E252C91DC0D008CFB8E /* Products */;
 			projectDirPath = "";
@@ -464,6 +474,7 @@
 				5D092E282C91DC0D008CFB8E /* AppDelegate.swift in Sources */,
 				5D092E7F2C91DF61008CFB8E /* DIContainer.swift in Sources */,
 				5D092E872C91DF73008CFB8E /* LoggerManager.swift in Sources */,
+				5D092EB72C924499008CFB8E /* BaseTableViewCell.swift in Sources */,
 				5D092E752C91DF52008CFB8E /* APIConfig.swift in Sources */,
 				5D092E862C91DF73008CFB8E /* DataConfigurator.swift in Sources */,
 				5D092E932C91E6EB008CFB8E /* CharactersListViewModel.swift in Sources */,
@@ -471,6 +482,7 @@
 				5D092E842C91DF73008CFB8E /* DesignSystemManager.swift in Sources */,
 				5D092E962C91E7A8008CFB8E /* CharacterItemView.swift in Sources */,
 				5D092E7E2C91DF61008CFB8E /* DIContainer+characterUseCases.swift in Sources */,
+				5D092EB92C92461C008CFB8E /* FilterItemView.swift in Sources */,
 				5D092E852C91DF73008CFB8E /* AuthManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -824,6 +836,17 @@
 		};
 /* End XCLocalSwiftPackageReference section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		5D092EC82C924D99008CFB8E /* XCRemoteSwiftPackageReference "netfox" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:kasketis/netfox.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.21.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		5D092E582C91DE14008CFB8E /* Core */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -860,6 +883,11 @@
 		5D092E6B2C91DEE6008CFB8E /* ConfigData */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ConfigData;
+		};
+		5D092EC92C924D99008CFB8E /* netfox */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5D092EC82C924D99008CFB8E /* XCRemoteSwiftPackageReference "netfox" */;
+			productName = netfox;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

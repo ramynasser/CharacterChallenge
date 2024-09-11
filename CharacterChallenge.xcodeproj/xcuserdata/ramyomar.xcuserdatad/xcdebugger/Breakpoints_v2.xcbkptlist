@@ -7,220 +7,47 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C46B3CFD-AE48-427D-B42E-DF61A5371A36"
+            uuid = "09F075E9-58C5-48BD-B0C9-BD362910709B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CharacterChallenge/App/Scenes/Listing/View/CharactersListViewController.swift"
+            filePath = "CharacterChallenge/Data/Sources/CharacterData/DataSources/Remote/Character/RemoteCharacterDataSource.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "viewModelObservers()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E119A965-08E3-488B-A657-BE23B1E40F63"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CharacterChallenge/App/Scenes/Listing/ViewModel/CharactersListViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "map(charactersResponse:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2712AC3A-F97A-41BE-A3EA-DA316CEE5C84"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CharacterChallenge/App/Scenes/Listing/ViewModel/CharactersListViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "map(charactersResponse:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "6683D566-6E8A-4420-B944-BBA0B7B98BB7"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CharacterChallenge/App/Scenes/Listing/ViewModel/CharactersListViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "map(charactersResponse:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "79375B94-58E6-4DB1-9A39-56609F505D12"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CharacterChallenge/App/Scenes/Listing/ViewModel/CharactersListViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "fetchCharacters(showLoading:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "29423DC6-5D21-4F97-8E07-29035E23FC6C"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CharacterChallenge/App/Scenes/Listing/ViewModel/CharactersListViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "load()"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "getListing(_:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "29423DC6-5D21-4F97-8E07-29035E23FC6C - d1f95bbd7e1a10af"
+                  uuid = "09F075E9-58C5-48BD-B0C9-BD362910709B - 8cf32524caba958a"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "CharacterChallenge.CharactersListViewModel.load() -&gt; ()"
+                  symbolName = "(3) suspend resume partial function for CharacterData.RemoteCharacterDataSource.getListing(CharacterDomain.GetCharacterUseCaseInput) async -&gt; Swift.Result&lt;CharacterDomain.CharactersListResponse, CharacterDomain.CharacterError&gt;"
                   moduleName = "CharacterChallenge"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ramyomar/Desktop/CharacterChallenge/CharacterChallenge/App/Scenes/Listing/ViewModel/CharactersListViewModel.swift"
+                  urlString = "file:///Users/ramyomar/Desktop/CharacterChallenge/CharacterChallenge/Data/Sources/CharacterData/DataSources/Remote/Character/RemoteCharacterDataSource.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29"
-                  offsetFromSymbolStart = "124">
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "876">
                </Location>
                <Location
-                  uuid = "29423DC6-5D21-4F97-8E07-29035E23FC6C - d1f95bbd7e1a10cc"
+                  uuid = "09F075E9-58C5-48BD-B0C9-BD362910709B - 8cf32524caba958a"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "CharacterChallenge.CharactersListViewModel.load() -&gt; ()"
+                  symbolName = "(3) suspend resume partial function for CharacterData.RemoteCharacterDataSource.getListing(CharacterDomain.GetCharacterUseCaseInput) async -&gt; Swift.Result&lt;CharacterDomain.CharactersListResponse, CharacterDomain.CharacterError&gt;"
                   moduleName = "CharacterChallenge"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ramyomar/Desktop/CharacterChallenge/CharacterChallenge/App/Scenes/Listing/ViewModel/CharactersListViewModel.swift"
+                  urlString = "file:///Users/ramyomar/Desktop/CharacterChallenge/CharacterChallenge/Data/Sources/CharacterData/DataSources/Remote/Character/RemoteCharacterDataSource.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "30"
-                  endingLineNumber = "30"
-                  offsetFromSymbolStart = "124">
-               </Location>
-               <Location
-                  uuid = "29423DC6-5D21-4F97-8E07-29035E23FC6C - d1f95bbd7e1a10cc"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "CharacterChallenge.CharactersListViewModel.load() -&gt; ()"
-                  moduleName = "CharacterChallenge"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ramyomar/Desktop/CharacterChallenge/CharacterChallenge/App/Scenes/Listing/ViewModel/CharactersListViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "30"
-                  endingLineNumber = "30"
-                  offsetFromSymbolStart = "92">
-               </Location>
-               <Location
-                  uuid = "29423DC6-5D21-4F97-8E07-29035E23FC6C - e6fc64aebe0da9e4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Sendable () async -&gt; () in CharacterChallenge.CharactersListViewModel.load() -&gt; ()"
-                  moduleName = "CharacterChallenge"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ramyomar/Desktop/CharacterChallenge/CharacterChallenge/App/Scenes/Listing/ViewModel/CharactersListViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "30"
-                  endingLineNumber = "30"
-                  offsetFromSymbolStart = "28">
-               </Location>
-               <Location
-                  uuid = "29423DC6-5D21-4F97-8E07-29035E23FC6C - 4aeac09667b1613f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in CharacterChallenge.CharactersListViewModel.load() -&gt; ()"
-                  moduleName = "CharacterChallenge"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ramyomar/Desktop/CharacterChallenge/CharacterChallenge/App/Scenes/Listing/ViewModel/CharactersListViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "30"
-                  endingLineNumber = "30"
-                  offsetFromSymbolStart = "36">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "08CDBF21-DD63-4268-8BA3-AD8316B25C5C"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CharacterChallenge/App/Scenes/Listing/ViewModel/CharactersListViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "map(charactersResponse:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "08CDBF21-DD63-4268-8BA3-AD8316B25C5C - 221f4aed459a9961"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "CharacterChallenge.CharactersListViewModel.map(charactersResponse: Swift.Result&lt;CharacterDomain.CharactersListResponse, CharacterDomain.CharacterError&gt;) -&gt; ()"
-                  moduleName = "CharacterChallenge"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ramyomar/Desktop/CharacterChallenge/CharacterChallenge/App/Scenes/Listing/ViewModel/CharactersListViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "71"
-                  endingLineNumber = "71"
-                  offsetFromSymbolStart = "436">
-               </Location>
-               <Location
-                  uuid = "08CDBF21-DD63-4268-8BA3-AD8316B25C5C - 555ed14d93e2ab3c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (CharacterDomain.CharacterDetails) -&gt; CharacterChallenge.CharacterModel in CharacterChallenge.CharactersListViewModel.map(charactersResponse: Swift.Result&lt;CharacterDomain.CharactersListResponse, CharacterDomain.CharacterError&gt;) -&gt; ()"
-                  moduleName = "CharacterChallenge"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ramyomar/Desktop/CharacterChallenge/CharacterChallenge/App/Scenes/Listing/ViewModel/CharactersListViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "71"
-                  endingLineNumber = "71"
-                  offsetFromSymbolStart = "132">
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "1052">
                </Location>
             </Locations>
          </BreakpointContent>
