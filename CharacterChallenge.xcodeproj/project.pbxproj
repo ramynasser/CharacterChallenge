@@ -25,6 +25,15 @@
 		5D092E672C91DEB8008CFB8E /* CoreDomain in Frameworks */ = {isa = PBXBuildFile; productRef = 5D092E662C91DEB8008CFB8E /* CoreDomain */; };
 		5D092E6A2C91DEE6008CFB8E /* CharacterData in Frameworks */ = {isa = PBXBuildFile; productRef = 5D092E692C91DEE6008CFB8E /* CharacterData */; };
 		5D092E6C2C91DEE6008CFB8E /* ConfigData in Frameworks */ = {isa = PBXBuildFile; productRef = 5D092E6B2C91DEE6008CFB8E /* ConfigData */; };
+		5D092E752C91DF52008CFB8E /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D092E732C91DF52008CFB8E /* APIConfig.swift */; };
+		5D092E762C91DF52008CFB8E /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D092E742C91DF52008CFB8E /* AppConfig.swift */; };
+		5D092E7D2C91DF61008CFB8E /* DIContainer+Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D092E782C91DF61008CFB8E /* DIContainer+Networking.swift */; };
+		5D092E7E2C91DF61008CFB8E /* DIContainer+characterUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D092E7B2C91DF61008CFB8E /* DIContainer+characterUseCases.swift */; };
+		5D092E7F2C91DF61008CFB8E /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D092E7C2C91DF61008CFB8E /* DIContainer.swift */; };
+		5D092E842C91DF73008CFB8E /* DesignSystemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D092E802C91DF72008CFB8E /* DesignSystemManager.swift */; };
+		5D092E852C91DF73008CFB8E /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D092E812C91DF72008CFB8E /* AuthManager.swift */; };
+		5D092E862C91DF73008CFB8E /* DataConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D092E822C91DF72008CFB8E /* DataConfigurator.swift */; };
+		5D092E872C91DF73008CFB8E /* LoggerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D092E832C91DF73008CFB8E /* LoggerManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +67,15 @@
 		5D092E442C91DC11008CFB8E /* CharacterChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CharacterChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D092E482C91DC11008CFB8E /* CharacterChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterChallengeUITests.swift; sourceTree = "<group>"; };
 		5D092E4A2C91DC11008CFB8E /* CharacterChallengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterChallengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5D092E732C91DF52008CFB8E /* APIConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
+		5D092E742C91DF52008CFB8E /* AppConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		5D092E782C91DF61008CFB8E /* DIContainer+Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DIContainer+Networking.swift"; sourceTree = "<group>"; };
+		5D092E7B2C91DF61008CFB8E /* DIContainer+characterUseCases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DIContainer+characterUseCases.swift"; sourceTree = "<group>"; };
+		5D092E7C2C91DF61008CFB8E /* DIContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
+		5D092E802C91DF72008CFB8E /* DesignSystemManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignSystemManager.swift; sourceTree = "<group>"; };
+		5D092E812C91DF72008CFB8E /* AuthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		5D092E822C91DF72008CFB8E /* DataConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataConfigurator.swift; sourceTree = "<group>"; };
+		5D092E832C91DF73008CFB8E /* LoggerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,11 +135,11 @@
 		5D092E262C91DC0D008CFB8E /* CharacterChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				5D092E6D2C91DF11008CFB8E /* App */,
 				5D092E272C91DC0D008CFB8E /* AppDelegate.swift */,
 				5D092E292C91DC0D008CFB8E /* SceneDelegate.swift */,
 				5D092E2B2C91DC0D008CFB8E /* ViewController.swift */,
 				5D092E2D2C91DC0D008CFB8E /* Main.storyboard */,
-				5D092E302C91DC10008CFB8E /* Assets.xcassets */,
 				5D092E322C91DC10008CFB8E /* LaunchScreen.storyboard */,
 				5D092E352C91DC10008CFB8E /* Info.plist */,
 			);
@@ -143,6 +161,87 @@
 				5D092E4A2C91DC11008CFB8E /* CharacterChallengeUITestsLaunchTests.swift */,
 			);
 			path = CharacterChallengeUITests;
+			sourceTree = "<group>";
+		};
+		5D092E6D2C91DF11008CFB8E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				5D092E722C91DF35008CFB8E /* Scenes */,
+				5D092E712C91DF2E008CFB8E /* Manager */,
+				5D092E702C91DF28008CFB8E /* Resources */,
+				5D092E6F2C91DF21008CFB8E /* DependencyInjection  */,
+				5D092E6E2C91DF17008CFB8E /* Configs */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		5D092E6E2C91DF17008CFB8E /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+				5D092E732C91DF52008CFB8E /* APIConfig.swift */,
+				5D092E742C91DF52008CFB8E /* AppConfig.swift */,
+			);
+			path = Configs;
+			sourceTree = "<group>";
+		};
+		5D092E6F2C91DF21008CFB8E /* DependencyInjection  */ = {
+			isa = PBXGroup;
+			children = (
+				5D092E7C2C91DF61008CFB8E /* DIContainer.swift */,
+				5D092E772C91DF61008CFB8E /* Networking */,
+				5D092E792C91DF61008CFB8E /* UseCases */,
+			);
+			path = "DependencyInjection ";
+			sourceTree = "<group>";
+		};
+		5D092E702C91DF28008CFB8E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5D092E302C91DC10008CFB8E /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5D092E712C91DF2E008CFB8E /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				5D092E812C91DF72008CFB8E /* AuthManager.swift */,
+				5D092E822C91DF72008CFB8E /* DataConfigurator.swift */,
+				5D092E802C91DF72008CFB8E /* DesignSystemManager.swift */,
+				5D092E832C91DF73008CFB8E /* LoggerManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		5D092E722C91DF35008CFB8E /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		5D092E772C91DF61008CFB8E /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				5D092E782C91DF61008CFB8E /* DIContainer+Networking.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		5D092E792C91DF61008CFB8E /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				5D092E7A2C91DF61008CFB8E /* Character */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		5D092E7A2C91DF61008CFB8E /* Character */ = {
+			isa = PBXGroup;
+			children = (
+				5D092E7B2C91DF61008CFB8E /* DIContainer+characterUseCases.swift */,
+			);
+			path = Character;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,8 +393,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D092E2C2C91DC0D008CFB8E /* ViewController.swift in Sources */,
+				5D092E762C91DF52008CFB8E /* AppConfig.swift in Sources */,
+				5D092E7D2C91DF61008CFB8E /* DIContainer+Networking.swift in Sources */,
 				5D092E282C91DC0D008CFB8E /* AppDelegate.swift in Sources */,
+				5D092E7F2C91DF61008CFB8E /* DIContainer.swift in Sources */,
+				5D092E872C91DF73008CFB8E /* LoggerManager.swift in Sources */,
+				5D092E752C91DF52008CFB8E /* APIConfig.swift in Sources */,
+				5D092E862C91DF73008CFB8E /* DataConfigurator.swift in Sources */,
+				5D092E842C91DF73008CFB8E /* DesignSystemManager.swift in Sources */,
+				5D092E7E2C91DF61008CFB8E /* DIContainer+characterUseCases.swift in Sources */,
 				5D092E2A2C91DC0D008CFB8E /* SceneDelegate.swift in Sources */,
+				5D092E852C91DF73008CFB8E /* AuthManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
