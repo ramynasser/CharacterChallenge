@@ -24,26 +24,13 @@ final class CharactersListViewModel: LoadableObject {
     
     init(useCase: GetCharacterListUseCaseProtocol) {
         self.useCase = useCase
-        subscribeToViewDidLoad()
     }
     func load() {
-        if characters.isEmpty {
-            viewDidLoad.send()
+        Task {
+            await self.fetchCharacters(showLoading: true)
         }
     }
-   
-    func subscribeToViewDidLoad() {
-        viewDidLoad
-            .subscribe(on: DispatchQueue.global(qos: .background))
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] _ in
-                guard let self = self else { return }
-                Task {
-                    await self.fetchCharacters(showLoading: true)
-                }
-            }
-            .store(in: &cancellables)
-    }
+
     func fetchCharacters(showLoading: Bool) async {
         if showLoading {
             await MainActor.run {

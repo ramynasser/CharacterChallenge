@@ -85,7 +85,7 @@ let characterFont = FontValueContainer(
 )
 let characterPadding = PaddingValueContainer(
     small: 10,
-    medium: 15,
+    medium: 16,
     large: 25,
     xLarge: 30
 )
@@ -100,12 +100,18 @@ let characterCornerRadius = PaddingValueContainer(
     large: 25,
     xLarge: 30
 )
+let characterBorder = SizeValueContainer(
+    small: 1,
+    medium: 2,
+    large: 3
+)
 let characterDesignSystem = DesignSystemModel(
     colors: characterColor,
     fonts: characterFont,
     padding: characterPadding, 
     cornerRadius: characterCornerRadius,
-    size: characterSizes
+    size: characterSizes,
+    border: characterBorder
 )
 
 class FontStyle: AppFontStyleProtocol {

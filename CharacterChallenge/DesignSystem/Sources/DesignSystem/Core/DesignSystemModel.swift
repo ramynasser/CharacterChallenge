@@ -14,19 +14,22 @@ public class DesignSystemModel {
     public let padding: PaddingValueContainer
     public let cornerRadius: PaddingValueContainer
     public let size: SizeValueContainer
-    
+    public let border: SizeValueContainer
+
     public init(
         colors: ColorValueContainer,
         fonts: FontValueContainer,
         padding: PaddingValueContainer,
         cornerRadius: PaddingValueContainer,
-        size: SizeValueContainer
+        size: SizeValueContainer,
+        border: SizeValueContainer
     ) {
         self.colors = colors
         self.fonts = fonts
         self.padding = padding
         self.cornerRadius = cornerRadius
         self.size = size
+        self.border = border
     }
 }
 public struct PaddingValueContainer {

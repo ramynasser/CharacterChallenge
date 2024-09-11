@@ -8,11 +8,20 @@
 import UIKit
 import DesignSystem
 import Combine
+import SwiftUI
 
 class CharactersListViewController: UIViewController {
     private let viewModel: CharactersListViewModel
     private var cancellables = Set<AnyCancellable>()
 
+    @IBOutlet weak var filterCollectionTop: NSLayoutConstraint!
+    @IBOutlet weak var filterCollectionLeading: NSLayoutConstraint!
+    @IBOutlet weak var filterCollectionTrailing: NSLayoutConstraint!
+    @IBOutlet weak var tableViewTop: NSLayoutConstraint!
+    @IBOutlet weak var tableViewBottom: NSLayoutConstraint!
+    @IBOutlet weak var charactersTableView: UITableView!
+    @IBOutlet weak var filterCollectionView: UICollectionView!
+    private let cellReuseID = "CharacterItemView"
     //MARK: - Init
     init(viewModel: CharactersListViewModel) {
         self.viewModel = viewModel
@@ -26,18 +35,35 @@ class CharactersListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.load()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
+        setupViews()
+        setupTableView()
         viewModelObservers()
+    }
+   
+    private func setupTableView() {
+        charactersTableView.register(CharacterTableViewCell.self, forCellReuseIdentifier: cellReuseID)
+        charactersTableView.delegate = self
+        charactersTableView.dataSource = self
+    }
+    private func setupViews() {
+        filterCollectionTop.constant = fiberPadding.medium
+        filterCollectionLeading.constant = fiberPadding.medium
+        filterCollectionTrailing.constant = fiberPadding.medium
+
+        tableViewTop.constant = fiberPadding.large
+        tableViewBottom.constant = fiberPadding.medium
     }
     private func viewModelObservers() {
         viewModel.$state.sink { [weak self] state in
             switch state {
             case .loading:
-                print("loading")
+                DispatchQueue.main.async {
+                    self?.showActivityIndicator()
+                }
             case .loaded:
-                print("loaded")
+                DispatchQueue.main.async {
+                    self?.charactersTableView.reloadData()
+                }
             default:
                 print("other")
 
@@ -45,5 +71,33 @@ class CharactersListViewController: UIViewController {
         }
         .store(in: &cancellables)
 
+    }
+}
+extension CharactersListViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.characters.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let character = viewModel.characters[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseID, for: indexPath) as! CharacterTableViewCell
+        cell.contentConfiguration = UIHostingConfiguration(content: {
+            CharacterItemView(character: character)
+        })
+        cell.selectionStyle = .none
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+    }
+}
+
+class CharacterTableViewCell: UITableViewCell {
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        // Clear the SwiftUI content to avoid incorrect data display during reuse
+        self.contentConfiguration = nil
     }
 }

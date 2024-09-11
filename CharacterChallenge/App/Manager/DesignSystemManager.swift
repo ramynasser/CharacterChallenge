@@ -20,6 +20,7 @@ struct DesignSystemConfigurator: AppDelegateManagable {
 }
 let colors = Fiber.shared.colors
 let fonts = Fiber.shared.fonts
-let padding = Fiber.shared.padding
+let fiberPadding = Fiber.shared.padding
 let size = Fiber.shared.size
 let fiberCornerRadius = Fiber.shared.cornerRadius
+let fiberBorders = Fiber.shared.borders

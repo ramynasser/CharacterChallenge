@@ -14,9 +14,9 @@ struct CharacterItemView: View {
     var body: some View {
         HStack {
             RemoteImage(url: character.image)
-                .frame(width: size.small, height: size.small)
                 .cornerRadius(fiberCornerRadius.small)
-                .shadow(radius: fiberCornerRadius.small)
+                .padding(fiberPadding.medium)
+                .frame(width: size.medium)
 
             VStack(alignment: .leading) {
                 Text(character.name)
@@ -26,11 +26,25 @@ struct CharacterItemView: View {
                 Text(character.species)
                     .font(fonts.utility.small)
                     .foregroundColor(colors.secondary)
+                Spacer()
             }
+            .padding(.top, fiberPadding.medium)
             Spacer()
         }
-        .padding()
-        .cornerRadius(fiberCornerRadius.small)
+        .frame(height: size.medium)
+        .background(content: {
+            if character.status == .alive {
+                colors.primaryBlue
+                .cornerRadius(fiberCornerRadius.small)
+            } else if character.status == .dead {
+                colors.dangor
+                .cornerRadius(fiberCornerRadius.small)
+            } else {
+                RoundedRectangle(cornerRadius: fiberCornerRadius.small)
+                    .stroke(colors.primaryGray, lineWidth: fiberBorders.small)
+            }
+        })
+
     }
 }
 #Preview {

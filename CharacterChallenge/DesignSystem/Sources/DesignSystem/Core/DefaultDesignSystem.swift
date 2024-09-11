@@ -98,10 +98,16 @@ let defaultSizes = SizeValueContainer(
     medium: 120,
     large: 240
 )
+let defaultBorder = SizeValueContainer(
+    small: 1,
+    medium: 2,
+    large: 3
+)
 let defaultDesignSystem = DesignSystemModel(
     colors: defaultColor,
     fonts: defaultFont,
     padding: defaultPadding,
     cornerRadius: defaultCornerRadius,
-    size: defaultSizes
+    size: defaultSizes, 
+    border: defaultBorder
 )

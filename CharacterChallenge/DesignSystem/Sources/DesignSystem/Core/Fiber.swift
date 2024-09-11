@@ -13,6 +13,7 @@ public class Fiber {
     public var size: SizeValueContainer { Fiber.shared.designSystem.size }
     public var padding: PaddingValueContainer { Fiber.shared.designSystem.padding }
     public var cornerRadius: PaddingValueContainer { Fiber.shared.designSystem.cornerRadius }
+    public var borders: SizeValueContainer { Fiber.shared.designSystem.border }
 
     private init() {
         if selectedTheme == nil {

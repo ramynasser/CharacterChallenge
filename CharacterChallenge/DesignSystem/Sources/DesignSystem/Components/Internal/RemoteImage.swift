@@ -27,7 +27,6 @@ public struct RemoteImage: View {
                 image
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .background(.clear)
             } else if phase.error != nil {
                 placeholder
                     .resizable()
