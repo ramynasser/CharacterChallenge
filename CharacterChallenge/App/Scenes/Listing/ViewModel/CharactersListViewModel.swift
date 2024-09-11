@@ -10,29 +10,30 @@ import DesignSystem
 import CharacterDomain
 import Combine
 final class CharactersListViewModel: LoadableObject {
-    @Published var state: ViewState<[CharacterModel]> = .loading
+    @Published var state: ViewState<[CharacterModel]> = .idle
 
     private let useCase: GetCharacterListUseCaseProtocol
     var characters: [CharacterModel] = []
 
     var currentPage: Int = 1
     @Published var isListFullLoaded = false
-    var getCharacters: PassthroughSubject<Void, Never> = .init()
+    var viewDidLoad: PassthroughSubject<Void, Never> = .init()
 
     private var cancellables = Set<AnyCancellable>()
 
     
     init(useCase: GetCharacterListUseCaseProtocol) {
         self.useCase = useCase
+        subscribeToViewDidLoad()
     }
     func load() {
         if characters.isEmpty {
-            getCharacters.send()
+            viewDidLoad.send()
         }
     }
    
     func subscribeToViewDidLoad() {
-        getCharacters
+        viewDidLoad
             .subscribe(on: DispatchQueue.global(qos: .background))
             .receive(on: DispatchQueue.main)
             .sink { [weak self] _ in

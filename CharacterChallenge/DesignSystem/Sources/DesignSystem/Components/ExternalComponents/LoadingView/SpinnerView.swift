@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 public struct SpinnerView: View {
     @State private var degree: Int = 270
@@ -55,4 +56,47 @@ public struct SpinnerView: View {
 
 #Preview {
     SpinnerView()
+}
+
+
+public extension UIViewController {
+    private struct ActivityIndicatorTag {
+        static let tag = 9999
+    }
+
+    func showActivityIndicator() {
+        DispatchQueue.main.async {
+            // Remove any existing activity indicator
+            self.hideActivityIndicator()
+
+            // Create a UIHostingController with your SpinnerView
+            let spinnerView = SpinnerView()
+            let hostingController = UIHostingController(rootView: spinnerView)
+            hostingController.view.translatesAutoresizingMaskIntoConstraints = false
+            hostingController.view.tag = ActivityIndicatorTag.tag
+
+            // Add the hosting controller's view as a subview
+            self.view.addSubview(hostingController.view)
+
+            // Center the spinner view in the parent view
+            NSLayoutConstraint.activate([
+                hostingController.view.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+                hostingController.view.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+                hostingController.view.widthAnchor.constraint(equalToConstant: 40),
+                hostingController.view.heightAnchor.constraint(equalToConstant: 40)
+            ])
+
+            // Add the hosting controller as a child view controller
+            self.addChild(hostingController)
+            hostingController.didMove(toParent: self)
+        }
+    }
+
+    func hideActivityIndicator() {
+        DispatchQueue.main.async {
+            if let existingSpinnerView = self.view.viewWithTag(ActivityIndicatorTag.tag) {
+                existingSpinnerView.removeFromSuperview()
+            }
+        }
+    }
 }

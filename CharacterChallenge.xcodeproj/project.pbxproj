@@ -169,6 +169,7 @@
 		5D092E6D2C91DF11008CFB8E /* App */ = {
 			isa = PBXGroup;
 			children = (
+				5D092E9A2C91FB9C008CFB8E /* Utilities */,
 				5D092E722C91DF35008CFB8E /* Scenes */,
 				5D092E712C91DF2E008CFB8E /* Manager */,
 				5D092E702C91DF28008CFB8E /* Resources */,
@@ -299,6 +300,13 @@
 				5D092E982C91E9FA008CFB8E /* CharacterModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		5D092E9A2C91FB9C008CFB8E /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
