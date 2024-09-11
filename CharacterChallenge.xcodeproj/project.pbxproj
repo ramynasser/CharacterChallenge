@@ -21,6 +21,10 @@
 		5D092E5D2C91DE14008CFB8E /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = 5D092E5C2C91DE14008CFB8E /* Networking */; };
 		5D092E602C91DE63008CFB8E /* CharacterDesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 5D092E5F2C91DE63008CFB8E /* CharacterDesignSystem */; };
 		5D092E622C91DE63008CFB8E /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 5D092E612C91DE63008CFB8E /* DesignSystem */; };
+		5D092E652C91DEB8008CFB8E /* CharacterDomain in Frameworks */ = {isa = PBXBuildFile; productRef = 5D092E642C91DEB8008CFB8E /* CharacterDomain */; };
+		5D092E672C91DEB8008CFB8E /* CoreDomain in Frameworks */ = {isa = PBXBuildFile; productRef = 5D092E662C91DEB8008CFB8E /* CoreDomain */; };
+		5D092E6A2C91DEE6008CFB8E /* CharacterData in Frameworks */ = {isa = PBXBuildFile; productRef = 5D092E692C91DEE6008CFB8E /* CharacterData */; };
+		5D092E6C2C91DEE6008CFB8E /* ConfigData in Frameworks */ = {isa = PBXBuildFile; productRef = 5D092E6B2C91DEE6008CFB8E /* ConfigData */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,10 +65,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D092E652C91DEB8008CFB8E /* CharacterDomain in Frameworks */,
+				5D092E6C2C91DEE6008CFB8E /* ConfigData in Frameworks */,
 				5D092E622C91DE63008CFB8E /* DesignSystem in Frameworks */,
 				5D092E5D2C91DE14008CFB8E /* Networking in Frameworks */,
 				5D092E602C91DE63008CFB8E /* CharacterDesignSystem in Frameworks */,
+				5D092E6A2C91DEE6008CFB8E /* CharacterData in Frameworks */,
 				5D092E5B2C91DE14008CFB8E /* Logger in Frameworks */,
+				5D092E672C91DEB8008CFB8E /* CoreDomain in Frameworks */,
 				5D092E592C91DE14008CFB8E /* Core in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -159,6 +167,10 @@
 				5D092E5C2C91DE14008CFB8E /* Networking */,
 				5D092E5F2C91DE63008CFB8E /* CharacterDesignSystem */,
 				5D092E612C91DE63008CFB8E /* DesignSystem */,
+				5D092E642C91DEB8008CFB8E /* CharacterDomain */,
+				5D092E662C91DEB8008CFB8E /* CoreDomain */,
+				5D092E692C91DEE6008CFB8E /* CharacterData */,
+				5D092E6B2C91DEE6008CFB8E /* ConfigData */,
 			);
 			productName = CharacterChallenge;
 			productReference = 5D092E242C91DC0D008CFB8E /* CharacterChallenge.app */;
@@ -235,6 +247,8 @@
 			packageReferences = (
 				5D092E572C91DE14008CFB8E /* XCLocalSwiftPackageReference "CharacterChallenge/Core" */,
 				5D092E5E2C91DE63008CFB8E /* XCLocalSwiftPackageReference "CharacterChallenge/DesignSystem" */,
+				5D092E632C91DEB8008CFB8E /* XCLocalSwiftPackageReference "CharacterChallenge/Domain" */,
+				5D092E682C91DEE6008CFB8E /* XCLocalSwiftPackageReference "CharacterChallenge/Data" */,
 			);
 			productRefGroup = 5D092E252C91DC0D008CFB8E /* Products */;
 			projectDirPath = "";
@@ -632,6 +646,14 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = CharacterChallenge/DesignSystem;
 		};
+		5D092E632C91DEB8008CFB8E /* XCLocalSwiftPackageReference "CharacterChallenge/Domain" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = CharacterChallenge/Domain;
+		};
+		5D092E682C91DEE6008CFB8E /* XCLocalSwiftPackageReference "CharacterChallenge/Data" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = CharacterChallenge/Data;
+		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -654,6 +676,22 @@
 		5D092E612C91DE63008CFB8E /* DesignSystem */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = DesignSystem;
+		};
+		5D092E642C91DEB8008CFB8E /* CharacterDomain */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CharacterDomain;
+		};
+		5D092E662C91DEB8008CFB8E /* CoreDomain */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CoreDomain;
+		};
+		5D092E692C91DEE6008CFB8E /* CharacterData */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CharacterData;
+		};
+		5D092E6B2C91DEE6008CFB8E /* ConfigData */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ConfigData;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
