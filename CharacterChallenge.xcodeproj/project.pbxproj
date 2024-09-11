@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,9 @@
 		5D092E3F2C91DC11008CFB8E /* CharacterChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D092E3E2C91DC11008CFB8E /* CharacterChallengeTests.swift */; };
 		5D092E492C91DC11008CFB8E /* CharacterChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D092E482C91DC11008CFB8E /* CharacterChallengeUITests.swift */; };
 		5D092E4B2C91DC11008CFB8E /* CharacterChallengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D092E4A2C91DC11008CFB8E /* CharacterChallengeUITestsLaunchTests.swift */; };
+		5D092E592C91DE14008CFB8E /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = 5D092E582C91DE14008CFB8E /* Core */; };
+		5D092E5B2C91DE14008CFB8E /* Logger in Frameworks */ = {isa = PBXBuildFile; productRef = 5D092E5A2C91DE14008CFB8E /* Logger */; };
+		5D092E5D2C91DE14008CFB8E /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = 5D092E5C2C91DE14008CFB8E /* Networking */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +59,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D092E5D2C91DE14008CFB8E /* Networking in Frameworks */,
+				5D092E5B2C91DE14008CFB8E /* Logger in Frameworks */,
+				5D092E592C91DE14008CFB8E /* Core in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +149,11 @@
 			dependencies = (
 			);
 			name = CharacterChallenge;
+			packageProductDependencies = (
+				5D092E582C91DE14008CFB8E /* Core */,
+				5D092E5A2C91DE14008CFB8E /* Logger */,
+				5D092E5C2C91DE14008CFB8E /* Networking */,
+			);
 			productName = CharacterChallenge;
 			productReference = 5D092E242C91DC0D008CFB8E /* CharacterChallenge.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +226,9 @@
 				Base,
 			);
 			mainGroup = 5D092E1B2C91DC0D008CFB8E;
+			packageReferences = (
+				5D092E572C91DE14008CFB8E /* XCLocalSwiftPackageReference "CharacterChallenge/Core" */,
+			);
 			productRefGroup = 5D092E252C91DC0D008CFB8E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -601,6 +615,28 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		5D092E572C91DE14008CFB8E /* XCLocalSwiftPackageReference "CharacterChallenge/Core" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = CharacterChallenge/Core;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5D092E582C91DE14008CFB8E /* Core */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Core;
+		};
+		5D092E5A2C91DE14008CFB8E /* Logger */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Logger;
+		};
+		5D092E5C2C91DE14008CFB8E /* Networking */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Networking;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5D092E1C2C91DC0D008CFB8E /* Project object */;
 }
