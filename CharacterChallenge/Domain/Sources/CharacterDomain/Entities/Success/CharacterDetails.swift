@@ -56,8 +56,8 @@ public enum Gender: String, Codable {
 
 // MARK: - Location
 public struct Location: Codable {
-    var name: String?
-    var url: String?
+    public var name: String?
+    public var url: String?
     public init(
         name: String? = nil,
         url: String? = nil

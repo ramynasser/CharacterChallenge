@@ -8,7 +8,7 @@
 import SwiftUI
 import Combine
 
-protocol LoadableObject: ObservableObject {
+public protocol LoadableObject: ObservableObject {
     associatedtype Output
     var state: ViewState<Output> { get }
     func load()

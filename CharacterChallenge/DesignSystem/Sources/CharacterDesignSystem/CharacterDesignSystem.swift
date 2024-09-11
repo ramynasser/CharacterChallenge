@@ -9,16 +9,18 @@ import Foundation
 import DesignSystem
 import SwiftUI
 let characterColor = ColorValueContainer(
-    primary: Color(hex: "F2C94C"),
-    secondary: Color(hex: "333333"),
+    primary: Color(hex: "170341"),
+    secondary: Color(hex: "504974"),
     white: Color(hex: "FFFFFF"),
     black: Color(hex: "000000"),
-    primaryGray: Color(hex: "3A3F47"),
-    secondaryGray: Color(hex: "92929D"),
-    darkGray: Color(hex: "3A3F47"),
-    dangor: Color(hex: "690000"),
-    blue: Color(hex: "0296E5")
+    primaryGray: Color(hex: "C3C0D1"),
+    secondaryGray: Color(hex: "827C9C"),
+    darkGray: Color(hex: "61CBF4"),
+    dangor: Color(hex: "FBE7EB"),
+    primaryBlue: Color(hex: "EBF6FB"),
+    secondaryBlue: Color(hex: "EBF6FB")
 )
+
 let characterFont = FontValueContainer(
     body: FontSize(
         small: Typography(
@@ -83,18 +85,26 @@ let characterFont = FontValueContainer(
 )
 let characterPadding = PaddingValueContainer(
     small: 10,
-    medium: 20,
-    large: 30
+    medium: 15,
+    large: 25,
+    xLarge: 30
 )
 let characterSizes = SizeValueContainer(
+    small: 50,
+    medium: 120,
+    large: 240
+)
+let characterCornerRadius = PaddingValueContainer(
     small: 10,
-    medium: 20,
-    large: 30
+    medium: 15,
+    large: 25,
+    xLarge: 30
 )
 let characterDesignSystem = DesignSystemModel(
     colors: characterColor,
     fonts: characterFont,
-    padding: characterPadding,
+    padding: characterPadding, 
+    cornerRadius: characterCornerRadius,
     size: characterSizes
 )
 

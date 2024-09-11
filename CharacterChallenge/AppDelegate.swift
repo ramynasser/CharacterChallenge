@@ -24,21 +24,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        window = UIWindow(frame: UIScreen.main.bounds)
-        
-        // Set the initial view controller
-        let initialViewController = CharactersListViewController()
-        let navigationController = UINavigationController(rootViewController: initialViewController)
-        window?.rootViewController = navigationController
-        
-        // Make the window visible
-        window?.makeKeyAndVisible()
-
-        Self.shared = self
+        startApp()
         setup()
         return true
     }
     
+    func startApp() {
+        window = UIWindow(frame: UIScreen.main.bounds)
+        struct UseCase: MainCoordinatorUseCaseProtocol {
+            var window: UIWindow?
+        }
+        let coordinator = MainCoordinator(useCase: UseCase(window: window))
+        coordinator.start()
+        // Set the initial view controller
+        Self.shared = self
+    }
+
     func setup() {
          _ = [
              DataConfigurator.shared,

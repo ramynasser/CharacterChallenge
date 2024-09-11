@@ -12,17 +12,20 @@ public class DesignSystemModel {
     public let colors: ColorValueContainer
     public let fonts: FontValueContainer
     public let padding: PaddingValueContainer
+    public let cornerRadius: PaddingValueContainer
     public let size: SizeValueContainer
     
     public init(
         colors: ColorValueContainer,
         fonts: FontValueContainer,
         padding: PaddingValueContainer,
+        cornerRadius: PaddingValueContainer,
         size: SizeValueContainer
     ) {
         self.colors = colors
         self.fonts = fonts
         self.padding = padding
+        self.cornerRadius = cornerRadius
         self.size = size
     }
 }
@@ -30,10 +33,12 @@ public struct PaddingValueContainer {
     public let small: CGFloat
     public let medium: CGFloat
     public let large: CGFloat
-    public init(small: CGFloat, medium: CGFloat, large: CGFloat) {
+    public let xLarge: CGFloat
+    public init(small: CGFloat, medium: CGFloat, large: CGFloat, xLarge: CGFloat) {
         self.small = small
         self.medium = medium
         self.large = large
+        self.xLarge = xLarge
     }
 }
 public struct SizeValueContainer {
@@ -77,7 +82,8 @@ public struct ColorValueContainer {
     public let secondaryGray: Color
     public let darkGray: Color
     public let dangor: Color
-    public let blue: Color
+    public let primaryBlue: Color
+    public let secondaryBlue: Color
     
     public init(
         primary: Color,
@@ -88,7 +94,8 @@ public struct ColorValueContainer {
         secondaryGray: Color,
         darkGray: Color,
         dangor: Color,
-        blue: Color
+        primaryBlue: Color,
+        secondaryBlue: Color
     ) {
         self.primary = primary
         self.secondary = secondary
@@ -98,7 +105,8 @@ public struct ColorValueContainer {
         self.secondaryGray = secondaryGray
         self.darkGray = darkGray
         self.dangor = dangor
-        self.blue = blue
+        self.primaryBlue = primaryBlue
+        self.secondaryBlue = secondaryBlue
     }
 }
 public struct Typography {

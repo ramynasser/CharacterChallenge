@@ -7,8 +7,8 @@
 
 import SwiftUI
 import Combine
-enum ViewState<Value>: Equatable {
-    static func == (lhs: ViewState<Value>, rhs: ViewState<Value>) -> Bool {
+public enum ViewState<Value>: Equatable {
+    public static func == (lhs: ViewState<Value>, rhs: ViewState<Value>) -> Bool {
         return String(describing: lhs.self) == String(describing: rhs.self)
     }
 

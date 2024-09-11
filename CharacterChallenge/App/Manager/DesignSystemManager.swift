@@ -22,3 +22,4 @@ let colors = Fiber.shared.colors
 let fonts = Fiber.shared.fonts
 let padding = Fiber.shared.padding
 let size = Fiber.shared.size
+let fiberCornerRadius = Fiber.shared.cornerRadius
