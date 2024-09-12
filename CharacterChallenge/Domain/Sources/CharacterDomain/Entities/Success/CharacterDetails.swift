@@ -10,9 +10,9 @@ public struct CharacterDetails: Codable {
     public var id: Int?
     public var name: String?
     public var status: CharacterStatus?
-    public var species: Species?
+    public var species: String?
     public var type: String?
-    public  var gender: Gender?
+    public  var gender: String?
     public var origin, location: Location?
     public var image: String?
     public var episode: [String]?
@@ -23,9 +23,9 @@ public struct CharacterDetails: Codable {
         id: Int? = nil,
         name: String? = nil,
         status: CharacterStatus? = nil,
-        species: Species? = nil,
+        species: String? = nil,
         type: String? = nil,
-        gender: Gender? = nil,
+        gender: String? = nil,
         origin: Location? = nil,
         location: Location? = nil,
         image: String? = nil,
@@ -48,12 +48,6 @@ public struct CharacterDetails: Codable {
     }
 }
 
-public enum Gender: String, Codable {
-    case female = "Female"
-    case male = "Male"
-    case unknown = "unknown"
-}
-
 // MARK: - Location
 public struct Location: Codable {
     public var name: String?
@@ -67,12 +61,8 @@ public struct Location: Codable {
     }
 }
 
-public enum Species: String, Codable {
-    case alien = "Alien"
-    case human = "Human"
-}
 
-public enum CharacterStatus: String, Codable, CaseIterable {
+public enum CharacterStatus: String, Codable {
     case alive = "Alive"
     case dead = "Dead"
     case unknown = "unknown"

@@ -11,7 +11,7 @@ struct CharacterModel {
     var name: String
     var species: String
     var location: String
-    var gender: Gender
+    var gender: String
     var status: CharacterStatus
     var image: String
 }
@@ -21,7 +21,7 @@ extension CharacterModel {
             name: "Ramy",
             species: "Humanoid",
             location: "cairo",
-            gender: .female, 
+            gender: "female", 
             status: .alive,
             image: "https://rickandmortyapi.com/api/character/avatar/1.jpeg"
         )

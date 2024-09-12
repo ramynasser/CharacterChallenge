@@ -13,9 +13,9 @@ extension CharacterDetails: DecodableFromDTO {
         var id: Int?
         var name: String?
         var status: CharacterStatus?
-        var species: Species?
+        var species: String?
         var type: String?
-        var gender: Gender?
+        var gender: String?
         var origin, location: Location.DTO?
         var image: String?
         var episode: [String]?

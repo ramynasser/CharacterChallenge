@@ -26,10 +26,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="xYN-zr-AMZ">
-                    <rect key="frame" x="16" y="75" width="361" height="60"/>
+                    <rect key="frame" x="16" y="59" width="361" height="0.0"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="60" id="rXP-OK-HoP"/>
+                        <constraint firstAttribute="height" id="rXP-OK-HoP"/>
                     </constraints>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7MC-f0-Cd3">
                         <size key="itemSize" width="128" height="125"/>
@@ -39,8 +39,8 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ttJ-gs-2Nl">
-                    <rect key="frame" x="0.0" y="151" width="393" height="683"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <rect key="frame" x="0.0" y="59" width="393" height="775"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
             </subviews>
@@ -50,8 +50,8 @@
                 <constraint firstItem="ttJ-gs-2Nl" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="16" id="3XM-FC-wrK"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ttJ-gs-2Nl" secondAttribute="trailing" id="Azj-Be-rxr"/>
                 <constraint firstItem="ttJ-gs-2Nl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="CLL-19-EyG"/>
-                <constraint firstItem="ttJ-gs-2Nl" firstAttribute="top" secondItem="xYN-zr-AMZ" secondAttribute="bottom" constant="16" id="FdT-7I-mzd"/>
-                <constraint firstItem="xYN-zr-AMZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="P7P-ig-EIP"/>
+                <constraint firstItem="ttJ-gs-2Nl" firstAttribute="top" secondItem="xYN-zr-AMZ" secondAttribute="bottom" id="FdT-7I-mzd"/>
+                <constraint firstItem="xYN-zr-AMZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="P7P-ig-EIP"/>
                 <constraint firstItem="xYN-zr-AMZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Ttt-DF-pcF"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xYN-zr-AMZ" secondAttribute="trailing" constant="16" id="wk6-eJ-5jg"/>
             </constraints>

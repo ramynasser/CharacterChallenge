@@ -28,11 +28,22 @@ final class CharactersListViewModel: LoadableObject {
     
     init(useCase: GetCharacterListUseCaseProtocol) {
         self.useCase = useCase
+        subscribeToViewDidLoad()
     }
     func load() {
-        Task {
-            await self.fetchCharacters(showLoading: true)
-        }
+        viewDidLoad.send()
+    }
+    func subscribeToViewDidLoad() {
+        viewDidLoad
+            .subscribe(on: DispatchQueue.global(qos: .background))
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                guard let self = self else { return }
+                Task {
+                    await self.fetchCharacters(showLoading: true)
+                }
+            }
+            .store(in: &cancellables)
     }
     func didFinishScroll() {
         guard isListFullLoaded == false else {
@@ -73,9 +84,9 @@ final class CharactersListViewModel: LoadableObject {
             self.characters.append(contentsOf: chars.map {
                 CharacterModel(
                     name: $0.name ?? "",
-                    species: $0.species?.rawValue ?? "",
+                    species: $0.species ?? "",
                     location: $0.location?.name ?? "",
-                    gender: $0.gender ?? .unknown,
+                    gender: $0.gender ?? "",
                     status: $0.status ?? .unknown,
                     image: $0.image ?? ""
                 )
