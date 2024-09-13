@@ -22,23 +22,15 @@ public struct RemoteImage: View {
     }
 
     public var body: some View {
-        AsyncImage(url: URL(string: url)) { phase in
-            if let image = phase.image {
-                image
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-            } else if phase.error != nil {
-                placeholder
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .foregroundColor(Fiber.shared.colors.dangor)
-            } else {
-                ProgressView()
-            }
+        AsyncCachedImage(url: URL(string: url)) { image in
+            image
+            .resizable()
+            .aspectRatio(contentMode: .fill)
+        } placeholder: {
+            ProgressView()
         }
     }
 }
-
 #Preview {
     RemoteImage(url: "https://m.media-amazon.com/images/M/MV5BMjMyOTM4MDMxNV5BMl5BanBnXkFtZTcwNjIyNzExOA@@._V1_FMjpg_UX1000_.jpg")
 }

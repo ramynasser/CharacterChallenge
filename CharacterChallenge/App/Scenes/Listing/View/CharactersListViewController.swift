@@ -24,6 +24,7 @@ class CharactersListViewController: UIViewController {
     @IBOutlet weak var filterCollectionView: UICollectionView!
     var loadingDataSource: LoadingDataSource?
     var populateDataSource: PopulateDataSource?
+    var filterDataSource: FilterDataSource?
     
     //MARK: - Init
     init(viewModel: CharactersListViewModel) {
@@ -47,12 +48,18 @@ class CharactersListViewController: UIViewController {
 //        filterCollectionLeading.constant = fiberPadding.medium
 //        filterCollectionTrailing.constant = fiberPadding.medium
         
-        tableViewTop.constant = fiberPadding.large
-        tableViewBottom.constant = fiberPadding.medium
+//        tableViewTop.constant = fiberPadding.large
+//        tableViewBottom.constant = fiberPadding.medium
         navigationItem.title = "Characters"
+//        navigationItem.tit
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
+    private func setupNavigationBar() {
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: colors.primary]
+        title = "Characters"
+    }
     private func viewModelObservers() {
         viewModel.$state.sink { [weak self] state in
             guard let self = self else {
@@ -70,6 +77,14 @@ class CharactersListViewController: UIViewController {
                             self.viewModel.didFinishScroll()
                         }
                     })
+                self.filterDataSource = FilterDataSource(
+                    collectionView: self.filterCollectionView,
+                    filters: viewModel.filters, 
+                    selectedFilter: viewModel.selectedFilter,
+                    callback: { filter in
+                        self.viewModel.selectedFilter = filter
+                    }
+                )
             case .empty:
                 print("empty")
             default:

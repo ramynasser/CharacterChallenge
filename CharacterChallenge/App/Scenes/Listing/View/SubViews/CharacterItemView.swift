@@ -24,7 +24,7 @@ struct CharacterItemView: View {
                     .foregroundColor(colors.primary)
                 
                 Text(character.species)
-                    .font(fonts.utility.small)
+                    .font(fonts.headline.small)
                     .foregroundColor(colors.secondary)
                 Spacer()
             }
@@ -32,19 +32,12 @@ struct CharacterItemView: View {
             Spacer()
         }
         .frame(height: size.medium)
-        .background(content: {
-            if character.status == .alive {
-                colors.primaryBlue
-                .cornerRadius(fiberCornerRadius.small)
-            } else if character.status == .dead {
-                colors.dangor
-                .cornerRadius(fiberCornerRadius.small)
-            } else {
-                RoundedRectangle(cornerRadius: fiberCornerRadius.small)
-                    .stroke(colors.primaryGray, lineWidth: fiberBorders.small)
-            }
-        })
-
+        .background(character.status == .alive ? colors.primaryBlue : character.status == .dead ? colors.dangor : Color.clear)
+        .cornerRadius(fiberCornerRadius.medium)
+        .overlay(
+            RoundedRectangle(cornerRadius: fiberCornerRadius.medium)
+                .stroke(character.status == .unknown ? colors.primaryGray : Color.clear)
+        )
     }
 }
 #Preview {

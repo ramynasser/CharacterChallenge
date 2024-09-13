@@ -13,7 +13,9 @@ import DesignSystem
 class LoadingDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     private let cellReuseID = "loadingItemView"
     
-    init(tableView: UITableView) {
+    init(
+        tableView: UITableView
+    ) {
         super.init()
         tableView.register(
             BaseTableViewCell.self, forCellReuseIdentifier: cellReuseID

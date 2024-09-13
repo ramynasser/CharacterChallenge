@@ -14,7 +14,7 @@ final class CharactersListViewModel: LoadableObject {
 
     private let useCase: GetCharacterListUseCaseProtocol
     var characters: [CharacterModel] = []
-    var filters: [CharacterStatus] = []
+    var filters: [CharacterStatus] = CharacterStatus.allCases
 
     var currentPage: Int = 1
     var totalPages: Int = 0
@@ -28,11 +28,33 @@ final class CharactersListViewModel: LoadableObject {
     
     init(useCase: GetCharacterListUseCaseProtocol) {
         self.useCase = useCase
-        subscribeToViewDidLoad()
+        subscribeToFilter()
     }
+
     func load() {
-        viewDidLoad.send()
+        Task {
+            await self.fetchCharacters(showLoading: true)
+        }
     }
+
+    func subscribeToFilter() {
+        $selectedFilter
+            .dropFirst()
+            .sink { [weak self] filter in
+                guard let self = self else { return }
+                applyFilter()
+            }
+            .store(in: &cancellables)
+    }
+
+    private func applyFilter() {
+        characters = []
+        currentPage = 1
+        Task {
+            await self.fetchCharacters(showLoading: true)
+        }
+    }
+    
     func subscribeToViewDidLoad() {
         viewDidLoad
             .subscribe(on: DispatchQueue.global(qos: .background))
@@ -65,7 +87,10 @@ final class CharactersListViewModel: LoadableObject {
                 state = .loading
             }
         }
-        let input = GetCharacterUseCaseInput(page: currentPage)
+        let input = GetCharacterUseCaseInput(
+            page: currentPage,
+            status: selectedFilter
+        )
         let result = await useCase.execute(input: input)
         await MainActor.run {
             map(charactersResponse: result)

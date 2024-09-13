@@ -84,6 +84,7 @@ let characterFont = FontValueContainer(
     )
 )
 let characterPadding = PaddingValueContainer(
+    xSmall: 5,
     small: 10,
     medium: 16,
     large: 25,
@@ -92,9 +93,11 @@ let characterPadding = PaddingValueContainer(
 let characterSizes = SizeValueContainer(
     small: 50,
     medium: 120,
-    large: 240
+    large: 130,
+    xlarge: 240
 )
 let characterCornerRadius = PaddingValueContainer(
+    xSmall: 5,
     small: 10,
     medium: 15,
     large: 25,
@@ -103,7 +106,8 @@ let characterCornerRadius = PaddingValueContainer(
 let characterBorder = SizeValueContainer(
     small: 1,
     medium: 2,
-    large: 3
+    large: 3,
+    xlarge: 4
 )
 let characterDesignSystem = DesignSystemModel(
     colors: characterColor,

@@ -82,12 +82,14 @@ let defaultFont = FontValueContainer(
     )
 )
 let defaultPadding = PaddingValueContainer(
+    xSmall: 5,
     small: 10,
     medium: 15,
     large: 25,
     xLarge: 30
 )
 let defaultCornerRadius = PaddingValueContainer(
+    xSmall: 5, 
     small: 10,
     medium: 15,
     large: 25,
@@ -96,12 +98,14 @@ let defaultCornerRadius = PaddingValueContainer(
 let defaultSizes = SizeValueContainer(
     small: 50,
     medium: 120,
-    large: 240
+    large: 130,
+    xlarge: 240
 )
 let defaultBorder = SizeValueContainer(
     small: 1,
     medium: 2,
-    large: 3
+    large: 3,
+    xlarge: 4
 )
 let defaultDesignSystem = DesignSystemModel(
     colors: defaultColor,

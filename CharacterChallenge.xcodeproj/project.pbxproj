@@ -43,6 +43,7 @@
 		5D092ECD2C930061008CFB8E /* LoadingDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D092ECC2C930061008CFB8E /* LoadingDataSource.swift */; };
 		5D092ECF2C930CB2008CFB8E /* PopulateDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D092ECE2C930CB2008CFB8E /* PopulateDataSource.swift */; };
 		5D092ED12C9312B9008CFB8E /* FilterDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D092ED02C9312B9008CFB8E /* FilterDataSource.swift */; };
+		5D092ED32C93B40E008CFB8E /* UIConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D092ED22C93B40E008CFB8E /* UIConfigurator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		5D092ECC2C930061008CFB8E /* LoadingDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingDataSource.swift; sourceTree = "<group>"; };
 		5D092ECE2C930CB2008CFB8E /* PopulateDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopulateDataSource.swift; sourceTree = "<group>"; };
 		5D092ED02C9312B9008CFB8E /* FilterDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterDataSource.swift; sourceTree = "<group>"; };
+		5D092ED22C93B40E008CFB8E /* UIConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConfigurator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +227,7 @@
 				5D092E822C91DF72008CFB8E /* DataConfigurator.swift */,
 				5D092E802C91DF72008CFB8E /* DesignSystemManager.swift */,
 				5D092E832C91DF73008CFB8E /* LoggerManager.swift */,
+				5D092ED22C93B40E008CFB8E /* UIConfigurator.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -488,6 +491,7 @@
 				5D092E8F2C91E4EA008CFB8E /* MainCoordinator.swift in Sources */,
 				5D092E762C91DF52008CFB8E /* AppConfig.swift in Sources */,
 				5D092E7D2C91DF61008CFB8E /* DIContainer+Networking.swift in Sources */,
+				5D092ED32C93B40E008CFB8E /* UIConfigurator.swift in Sources */,
 				5D092E282C91DC0D008CFB8E /* AppDelegate.swift in Sources */,
 				5D092E7F2C91DF61008CFB8E /* DIContainer.swift in Sources */,
 				5D092E872C91DF73008CFB8E /* LoggerManager.swift in Sources */,

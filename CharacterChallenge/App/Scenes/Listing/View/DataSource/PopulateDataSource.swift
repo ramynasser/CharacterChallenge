@@ -31,7 +31,6 @@ class PopulateDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
         tableView.delegate = self
         tableView.reloadData()
     }
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return characters.count
     }
@@ -50,6 +49,9 @@ class PopulateDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
         tableView.showLoadingFooterIfLastCell(at: indexPath)
     }
 
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return size.large
+    }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let isReachingEnd = scrollView.didReachEnd
         callback?(isReachingEnd)

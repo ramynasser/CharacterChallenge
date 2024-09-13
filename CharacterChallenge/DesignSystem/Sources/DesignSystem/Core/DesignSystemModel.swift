@@ -33,11 +33,19 @@ public class DesignSystemModel {
     }
 }
 public struct PaddingValueContainer {
+    public let xSmall: CGFloat
     public let small: CGFloat
     public let medium: CGFloat
     public let large: CGFloat
     public let xLarge: CGFloat
-    public init(small: CGFloat, medium: CGFloat, large: CGFloat, xLarge: CGFloat) {
+    public init(
+        xSmall: CGFloat, 
+        small: CGFloat,
+        medium: CGFloat,
+        large: CGFloat,
+        xLarge: CGFloat
+    ) {
+        self.xSmall = xSmall
         self.small = small
         self.medium = medium
         self.large = large
@@ -48,10 +56,12 @@ public struct SizeValueContainer {
     public let small: CGFloat
     public let medium: CGFloat
     public let large: CGFloat
-    public init(small: CGFloat, medium: CGFloat, large: CGFloat) {
+    public let xLarge: CGFloat
+    public init(small: CGFloat, medium: CGFloat, large: CGFloat, xlarge: CGFloat) {
         self.small = small
         self.medium = medium
         self.large = large
+        self.xLarge = xlarge
     }
 }
 

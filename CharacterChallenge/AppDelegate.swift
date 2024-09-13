@@ -46,7 +46,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          _ = [
              DataConfigurator.shared,
              LoggerConfigurator.shared,
-             DesignSystemConfigurator.shared
+             DesignSystemConfigurator.shared,
+             UIConfigurator.shared
          ].map { $0.setup() }
      }
     
