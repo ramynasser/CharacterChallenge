@@ -44,21 +44,12 @@ class CharactersListViewController: UIViewController {
     }
     
     private func setupViews() {
-//        filterCollectionTop.constant = fiberPadding.medium
-//        filterCollectionLeading.constant = fiberPadding.medium
-//        filterCollectionTrailing.constant = fiberPadding.medium
-        
-//        tableViewTop.constant = fiberPadding.large
-//        tableViewBottom.constant = fiberPadding.medium
-        navigationItem.title = "Characters"
-//        navigationItem.tit
-        navigationController?.navigationBar.prefersLargeTitles = true
+        setupNavigationBar()
     }
     
     private func setupNavigationBar() {
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: colors.primary]
-        title = "Characters"
+        navigationItem.title = "Characters"
     }
     private func viewModelObservers() {
         viewModel.$state.sink { [weak self] state in

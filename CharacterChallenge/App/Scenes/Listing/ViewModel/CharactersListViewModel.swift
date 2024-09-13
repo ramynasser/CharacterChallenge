@@ -11,21 +11,18 @@ import CharacterDomain
 import Combine
 final class CharactersListViewModel: LoadableObject {
     @Published var state: ViewState<[CharacterModel]> = .idle
-
-    private let useCase: GetCharacterListUseCaseProtocol
-    var characters: [CharacterModel] = []
-    var filters: [CharacterStatus] = CharacterStatus.allCases
-
-    var currentPage: Int = 1
-    var totalPages: Int = 0
     @Published var isListFullLoaded = false
     @Published var selectedFilter: CharacterStatus?
 
-    var viewDidLoad: PassthroughSubject<Void, Never> = .init()
+    var characters: [CharacterModel] = []
+    var filters: [CharacterStatus] = CharacterStatus.allCases
+
+    private var currentPage: Int = 1
+    private var totalPages: Int = 0
+    private let useCase: GetCharacterListUseCaseProtocol
 
     private var cancellables = Set<AnyCancellable>()
 
-    
     init(useCase: GetCharacterListUseCaseProtocol) {
         self.useCase = useCase
         subscribeToFilter()
@@ -55,18 +52,6 @@ final class CharactersListViewModel: LoadableObject {
         }
     }
     
-    func subscribeToViewDidLoad() {
-        viewDidLoad
-            .subscribe(on: DispatchQueue.global(qos: .background))
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] _ in
-                guard let self = self else { return }
-                Task {
-                    await self.fetchCharacters(showLoading: true)
-                }
-            }
-            .store(in: &cancellables)
-    }
     func didFinishScroll() {
         guard isListFullLoaded == false else {
             return

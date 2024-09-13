@@ -46,42 +46,10 @@
             filePath = "CharacterChallenge/App/Scenes/Listing/ViewModel/CharactersListViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "applyFilter()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "C1CFB14C-2B27-4079-96CF-628FB3BD50B7 - e61224551babb982"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "CharacterChallenge.CharactersListViewModel.applyFilter() -&gt; ()"
-                  moduleName = "CharacterChallenge"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ramyomar/Desktop/CharacterChallenge/CharacterChallenge/App/Scenes/Listing/ViewModel/CharactersListViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51"
-                  offsetFromSymbolStart = "208">
-               </Location>
-               <Location
-                  uuid = "C1CFB14C-2B27-4079-96CF-628FB3BD50B7 - e61224551babb982"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "CharacterChallenge.CharactersListViewModel.applyFilter() -&gt; ()"
-                  moduleName = "CharacterChallenge"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ramyomar/Desktop/CharacterChallenge/CharacterChallenge/App/Scenes/Listing/ViewModel/CharactersListViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51"
-                  offsetFromSymbolStart = "112">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
