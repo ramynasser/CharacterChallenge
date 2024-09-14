@@ -37,11 +37,12 @@ class EmptyDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
             return UITableViewCell()
         }
         cell.contentConfiguration = UIHostingConfiguration(content: {
-            EmptyStateView(
-                icon: Image("ic_empty"),
-                title: "No Data",
-                subTitle: "No Data To Show"
-            )
+            EmptyStateView
+                .Builder()
+                .setIcon(Image("ic_empty"))
+                .setTitle("No Data")
+                .setSubTitle("No Data To Show")
+                .build()
         })
         cell.selectionStyle = .none
         return cell

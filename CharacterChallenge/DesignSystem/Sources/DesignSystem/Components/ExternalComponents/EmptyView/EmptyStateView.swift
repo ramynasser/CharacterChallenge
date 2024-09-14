@@ -14,7 +14,8 @@ public struct EmptyStateView: View {
     public var subTitle: String?
     public var subTitleColor: Color = Fiber.shared.colors.secondaryGray
 
-    public init(
+    // Private initializer
+    private init(
         icon: Image? = nil,
         title: String? = nil,
         titleColor: Color = Fiber.shared.colors.white,
@@ -26,6 +27,52 @@ public struct EmptyStateView: View {
         self.titleColor = titleColor
         self.subTitle = subTitle
         self.subTitleColor = subTitleColor
+    }
+
+    // Builder class to incrementally set properties
+    public class Builder {
+        private var icon: Image?
+        private var title: String?
+        private var titleColor: Color = Fiber.shared.colors.white
+        private var subTitle: String?
+        private var subTitleColor: Color = Fiber.shared.colors.secondaryGray
+
+        public init() {}
+
+        public func setIcon(_ icon: Image?) -> Builder {
+            self.icon = icon
+            return self
+        }
+
+        public func setTitle(_ title: String?) -> Builder {
+            self.title = title
+            return self
+        }
+
+        public func setTitleColor(_ color: Color) -> Builder {
+            self.titleColor = color
+            return self
+        }
+
+        public func setSubTitle(_ subTitle: String?) -> Builder {
+            self.subTitle = subTitle
+            return self
+        }
+
+        public func setSubTitleColor(_ color: Color) -> Builder {
+            self.subTitleColor = color
+            return self
+        }
+
+        public func build() -> EmptyStateView {
+            return EmptyStateView(
+                icon: icon,
+                title: title,
+                titleColor: titleColor,
+                subTitle: subTitle,
+                subTitleColor: subTitleColor
+            )
+        }
     }
 
     public var body: some View {
@@ -54,8 +101,10 @@ public struct EmptyStateView: View {
 }
 
 #Preview {
-    EmptyStateView(icon: Image(systemName: "plus"),
-              title: "we are sorry, we can not find any charachers ",
-              subTitle: "Find your characheter")
-    .background(Fiber.shared.colors.black)
+    EmptyStateView.Builder()
+        .setIcon(Image(systemName: "plus"))
+        .setTitle("We are sorry, we cannot find any characters")
+        .setSubTitle("Find your character")
+        .build()
+        .background(Fiber.shared.colors.black)
 }

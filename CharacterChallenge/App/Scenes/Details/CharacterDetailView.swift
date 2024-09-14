@@ -20,17 +20,19 @@ struct CharacterDetailView: View {
             ContentView(source: viewModel) { model in
                 getCotentView(model: model)
             } failureContent: {
-                EmptyStateView(
-                    icon: Image("ic_error"),
-                    title: "Error",
-                    subTitle: "Something went wrong, Try again!"
-                )
+                EmptyStateView
+                    .Builder()
+                    .setIcon(Image("ic_error"))
+                    .setTitle("Error")
+                    .setSubTitle("Something went wrong, Try again!")
+                    .build()
             } emptyContent: {
-                EmptyStateView(
-                    icon: Image("ic_empty"),
-                    title: "No Data",
-                    subTitle: "No Data To Show"
-                )
+                EmptyStateView
+                    .Builder()
+                    .setIcon(Image("ic_empty"))
+                    .setTitle("No Data")
+                    .setSubTitle("No Data To Show")
+                    .build()
             }
             .background(colors.white)
         }

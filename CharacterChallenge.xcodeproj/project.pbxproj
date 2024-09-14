@@ -38,7 +38,6 @@
 		5D092E962C91E7A8008CFB8E /* CharacterItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D092E952C91E7A8008CFB8E /* CharacterItemView.swift */; };
 		5D092E992C91E9FA008CFB8E /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D092E982C91E9FA008CFB8E /* CharacterModel.swift */; };
 		5D092EB72C924499008CFB8E /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D092EB62C924499008CFB8E /* BaseTableViewCell.swift */; };
-		5D092ECA2C924D99008CFB8E /* netfox in Frameworks */ = {isa = PBXBuildFile; productRef = 5D092EC92C924D99008CFB8E /* netfox */; };
 		5D092ECD2C930061008CFB8E /* LoadingDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D092ECC2C930061008CFB8E /* LoadingDataSource.swift */; };
 		5D092ECF2C930CB2008CFB8E /* PopulateDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D092ECE2C930CB2008CFB8E /* PopulateDataSource.swift */; };
 		5D092ED12C9312B9008CFB8E /* FilterDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D092ED02C9312B9008CFB8E /* FilterDataSource.swift */; };
@@ -49,6 +48,7 @@
 		5D93DA112C95DFF700720736 /* EmptyDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D93DA102C95DFF700720736 /* EmptyDataSource.swift */; };
 		5D93DA132C95F43000720736 /* CharactersListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D93DA122C95F43000720736 /* CharactersListViewModelTests.swift */; };
 		5D93DA152C96434000720736 /* XCTest+PublishObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D93DA142C96434000720736 /* XCTest+PublishObject.swift */; };
+		5D93DA172C9648BB00720736 /* CharacterDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D93DA162C9648BB00720736 /* CharacterDetailViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +105,7 @@
 		5D93DA102C95DFF700720736 /* EmptyDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyDataSource.swift; sourceTree = "<group>"; };
 		5D93DA122C95F43000720736 /* CharactersListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListViewModelTests.swift; sourceTree = "<group>"; };
 		5D93DA142C96434000720736 /* XCTest+PublishObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTest+PublishObject.swift"; sourceTree = "<group>"; };
+		5D93DA162C9648BB00720736 /* CharacterDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,7 +113,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D092ECA2C924D99008CFB8E /* netfox in Frameworks */,
 				5D092E652C91DEB8008CFB8E /* CharacterDomain in Frameworks */,
 				5D092E6C2C91DEE6008CFB8E /* ConfigData in Frameworks */,
 				5D092E622C91DE63008CFB8E /* DesignSystem in Frameworks */,
@@ -179,6 +179,7 @@
 				5D092E3E2C91DC11008CFB8E /* CharacterChallengeTests.swift */,
 				5D93DA122C95F43000720736 /* CharactersListViewModelTests.swift */,
 				5D93DA142C96434000720736 /* XCTest+PublishObject.swift */,
+				5D93DA162C9648BB00720736 /* CharacterDetailViewModelTests.swift */,
 			);
 			path = CharacterChallengeTests;
 			sourceTree = "<group>";
@@ -411,7 +412,6 @@
 				5D092E662C91DEB8008CFB8E /* CoreDomain */,
 				5D092E692C91DEE6008CFB8E /* CharacterData */,
 				5D092E6B2C91DEE6008CFB8E /* ConfigData */,
-				5D092EC92C924D99008CFB8E /* netfox */,
 			);
 			productName = CharacterChallenge;
 			productReference = 5D092E242C91DC0D008CFB8E /* CharacterChallenge.app */;
@@ -490,7 +490,6 @@
 				5D092E5E2C91DE63008CFB8E /* XCLocalSwiftPackageReference "CharacterChallenge/DesignSystem" */,
 				5D092E632C91DEB8008CFB8E /* XCLocalSwiftPackageReference "CharacterChallenge/Domain" */,
 				5D092E682C91DEE6008CFB8E /* XCLocalSwiftPackageReference "CharacterChallenge/Data" */,
-				5D092EC82C924D99008CFB8E /* XCRemoteSwiftPackageReference "netfox" */,
 			);
 			productRefGroup = 5D092E252C91DC0D008CFB8E /* Products */;
 			projectDirPath = "";
@@ -589,6 +588,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D93DA132C95F43000720736 /* CharactersListViewModelTests.swift in Sources */,
+				5D93DA172C9648BB00720736 /* CharacterDetailViewModelTests.swift in Sources */,
 				5D092E3F2C91DC11008CFB8E /* CharacterChallengeTests.swift in Sources */,
 				5D93DA152C96434000720736 /* XCTest+PublishObject.swift in Sources */,
 			);
@@ -937,17 +937,6 @@
 		};
 /* End XCLocalSwiftPackageReference section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		5D092EC82C924D99008CFB8E /* XCRemoteSwiftPackageReference "netfox" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:kasketis/netfox.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.21.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
 		5D092E582C91DE14008CFB8E /* Core */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -984,11 +973,6 @@
 		5D092E6B2C91DEE6008CFB8E /* ConfigData */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ConfigData;
-		};
-		5D092EC92C924D99008CFB8E /* netfox */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5D092EC82C924D99008CFB8E /* XCRemoteSwiftPackageReference "netfox" */;
-			productName = netfox;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

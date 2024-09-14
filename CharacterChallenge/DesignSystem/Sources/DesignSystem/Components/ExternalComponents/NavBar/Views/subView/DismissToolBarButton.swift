@@ -30,7 +30,7 @@ public struct DismissToolBarButton: View {
                 .padding(Fiber.shared.padding.medium)
                 .background(Fiber.shared.colors.white)
                 .clipShape(Circle())
-                .shadow(radius: 5)
+                .shadow(radius: Fiber.shared.cornerRadius.small)
         }
         .buttonStyle(.plain)
     }

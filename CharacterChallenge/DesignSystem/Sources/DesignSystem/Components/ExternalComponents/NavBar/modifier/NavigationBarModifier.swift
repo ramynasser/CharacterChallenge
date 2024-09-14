@@ -1,13 +1,10 @@
 //
-//  SwiftUIView.swift
-//  
+//  NavigationBarModifier.swift
 //
-//  Created by Ramy NavigationBarModifier on 14/09/2024.
+//
+//  Created by Ramy Nasser on 14/09/2024.
 //
 
-import SwiftUI
-
-import Foundation
 import SwiftUI
 import UIKit
 public struct NavigationBarModifier: ViewModifier {

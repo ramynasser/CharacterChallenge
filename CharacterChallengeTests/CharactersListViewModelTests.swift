@@ -66,7 +66,7 @@ final class CharactersListViewModelTests: XCTestCase {
         mockUseCase.result = .success(CharactersListResponse(info:Info(count: 23, pages: 1, next: nil, prev: nil), results: expectedCharacters))
         
         // Act
-        await viewModel.load()
+        viewModel.load()
         
         // Assert
         XCTAssertNotEqual(viewModel.state, .loading)

@@ -7,7 +7,6 @@
 
 import UIKit
 import Logger
-import netfox
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     static var shared: AppDelegate!
@@ -42,7 +41,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func setup() {
-        NFX.sharedInstance().start()
          _ = [
              DataConfigurator.shared,
              LoggerConfigurator.shared,
