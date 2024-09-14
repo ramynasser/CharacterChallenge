@@ -33,19 +33,19 @@ public struct EmptyStateView: View {
             if let icon = icon {
                 icon
                     .resizable()
-                    .frame(width: 76, height: 76)
+                    .frame(width: Fiber.shared.size.medium, height: Fiber.shared.size.medium)
             }
             if let title = title, !title.isEmpty {
                 Text(title)
                     .font(Fiber.shared.fonts.body.large)
                     .foregroundStyle(titleColor)
-                    .padding(.top, 23)
+                    .padding(.top, Fiber.shared.padding.small)
                     .multilineTextAlignment(.center)
             }
             if let subTitle = subTitle, !subTitle.isEmpty {
                 Text(subTitle)
                     .foregroundStyle(subTitleColor)
-                    .padding(.top, 8)
+                    .padding(.top, Fiber.shared.padding.xSmall)
                     .multilineTextAlignment(.center)
             }
         }

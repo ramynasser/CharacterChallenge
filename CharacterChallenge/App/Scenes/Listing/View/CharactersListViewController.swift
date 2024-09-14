@@ -25,6 +25,7 @@ class CharactersListViewController: UIViewController {
     private var populateDataSource: PopulateDataSource?
     private var filterDataSource: FilterDataSource?
     private var coordinator: CharacterDetailCoordinator?
+    private var emptyDataSource: EmptyDataSource?
     private let viewModel: CharactersListViewModel
     private var cancellables = Set<AnyCancellable>()
 
@@ -104,9 +105,9 @@ class CharactersListViewController: UIViewController {
                     }
                 )
             case .empty:
-                print("empty")
+                emptyDataSource = EmptyDataSource(tableView: self.charactersTableView)
             default:
-                print("error")
+                emptyDataSource = EmptyDataSource(tableView: self.charactersTableView)
             }
         }
         .store(in: &cancellables)

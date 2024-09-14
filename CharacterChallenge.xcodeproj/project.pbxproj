@@ -46,6 +46,7 @@
 		5D092ED62C95ADB3008CFB8E /* CharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D092ED52C95ADB3008CFB8E /* CharacterDetailView.swift */; };
 		5D092ED92C95B9B8008CFB8E /* CharacterDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D092ED82C95B9B8008CFB8E /* CharacterDetailCoordinator.swift */; };
 		5D092EDD2C95C886008CFB8E /* CharacterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D092EDC2C95C886008CFB8E /* CharacterDetailViewModel.swift */; };
+		5D93DA112C95DFF700720736 /* EmptyDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D93DA102C95DFF700720736 /* EmptyDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		5D092ED52C95ADB3008CFB8E /* CharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
 		5D092ED82C95B9B8008CFB8E /* CharacterDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailCoordinator.swift; sourceTree = "<group>"; };
 		5D092EDC2C95C886008CFB8E /* CharacterDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewModel.swift; sourceTree = "<group>"; };
+		5D93DA102C95DFF700720736 /* EmptyDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -337,6 +339,7 @@
 				5D092ECC2C930061008CFB8E /* LoadingDataSource.swift */,
 				5D092ECE2C930CB2008CFB8E /* PopulateDataSource.swift */,
 				5D092ED02C9312B9008CFB8E /* FilterDataSource.swift */,
+				5D93DA102C95DFF700720736 /* EmptyDataSource.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -558,6 +561,7 @@
 				5D092E7F2C91DF61008CFB8E /* DIContainer.swift in Sources */,
 				5D092EDD2C95C886008CFB8E /* CharacterDetailViewModel.swift in Sources */,
 				5D092E872C91DF73008CFB8E /* LoggerManager.swift in Sources */,
+				5D93DA112C95DFF700720736 /* EmptyDataSource.swift in Sources */,
 				5D092EB72C924499008CFB8E /* BaseTableViewCell.swift in Sources */,
 				5D092E752C91DF52008CFB8E /* APIConfig.swift in Sources */,
 				5D092E862C91DF73008CFB8E /* DataConfigurator.swift in Sources */,
