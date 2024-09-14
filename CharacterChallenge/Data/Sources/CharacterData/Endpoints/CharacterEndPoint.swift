@@ -29,7 +29,7 @@ extension CharacterEndpoint: RemoteEndpoint {
         case .listing:
             return "character"
         case let .details(id):
-            return "character\(id)"
+            return "character/\(id)"
         }
     }
     

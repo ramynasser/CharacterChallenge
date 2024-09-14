@@ -14,10 +14,9 @@ let defaultColor = ColorValueContainer(
     black: Color(hex: "000000"),
     primaryGray: Color(hex: "C3C0D1"),
     secondaryGray: Color(hex: "827C9C"),
-    darkGray: Color(hex: "61CBF4"),
     dangor: Color(hex: "FBE7EB"),
     primaryBlue: Color(hex: "EBF6FB"),
-    secondaryBlue: Color(hex: "EBF6FB")
+    secondaryBlue: Color(hex: "62CBF4")
 )
 let defaultFont = FontValueContainer(
     body: FontSize(

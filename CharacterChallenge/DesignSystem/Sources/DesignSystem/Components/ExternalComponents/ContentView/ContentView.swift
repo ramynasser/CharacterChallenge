@@ -8,7 +8,7 @@
 import SwiftUI
 import Combine
 
-struct ContentView<Source: LoadableObject,
+public struct ContentView<Source: LoadableObject,
                     LoadingView: View,
                     FailureView: View,
                     EmptyView: View,
@@ -32,27 +32,27 @@ struct ContentView<Source: LoadableObject,
         self.failureContent = failureContent
         self.emptyContent = emptyContent
     }
-    var body: some View {
+    public var body: some View {
         switch source.state {
         case .idle:
             Color.clear.onAppear(perform: source.load)
         case .loading:
             loadingContent()
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(Fiber.shared.colors.black)
+                .background(Fiber.shared.colors.white)
         case .failed:
             failureContent()
-                .background(Fiber.shared.colors.black)
+                .background(Fiber.shared.colors.white)
         case .loaded(let output):
             content(output)
-                .background(Fiber.shared.colors.black)
+                .background(Fiber.shared.colors.white)
         case .empty:
             emptyContent()
-                .background(Fiber.shared.colors.black)
+                .background(Fiber.shared.colors.white)
         }
     }
 }
-extension ContentView where LoadingView == AnyView {
+public extension ContentView where LoadingView == AnyView {
     init(
         source: Source,
         @ViewBuilder content: @escaping (Source.Output) -> Content,

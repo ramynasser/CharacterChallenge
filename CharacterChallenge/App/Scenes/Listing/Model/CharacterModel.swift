@@ -8,6 +8,7 @@
 import Foundation
 import CharacterDomain
 struct CharacterModel {
+    var id: Int
     var name: String
     var species: String
     var location: String
@@ -18,6 +19,7 @@ struct CharacterModel {
 extension CharacterModel {
     static var sample: CharacterModel {
         .init(
+            id: 1,
             name: "Ramy",
             species: "Humanoid",
             location: "cairo",

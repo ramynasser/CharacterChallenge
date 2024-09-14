@@ -10,19 +10,23 @@ import SwiftUI
 import Core
 import DesignSystem
 typealias DidReachEndCallback = ((Bool) -> Void)
+typealias didSelectCallBack = ((Int) -> Void)
 
 class PopulateDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     private let cellReuseID = "CharacterItemView"
     private var characters: [CharacterModel]
     private var callback: DidReachEndCallback?
+    private var selectionCallBack: didSelectCallBack?
     
     init(
         tableView: UITableView,
         characters: [CharacterModel],
-        callback: @escaping DidReachEndCallback
+        callback: @escaping DidReachEndCallback,
+        selectionCallBack: @escaping didSelectCallBack
     ) {
         self.characters = characters
         self.callback = callback
+        self.selectionCallBack = selectionCallBack
         super.init()
         tableView.register(
             BaseTableViewCell.self, forCellReuseIdentifier: cellReuseID
@@ -55,6 +59,9 @@ class PopulateDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let isReachingEnd = scrollView.didReachEnd
         callback?(isReachingEnd)
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectionCallBack?(indexPath.row)
     }
 }
 

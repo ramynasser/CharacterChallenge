@@ -62,10 +62,74 @@
             filePath = "CharacterChallenge/App/Scenes/Listing/View/DataSource/PopulateDataSource.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "scrollViewDidScroll(_:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3B1D8E05-285C-4811-B574-ABE67EBB4F87"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CharacterChallenge/DesignSystem/Sources/DesignSystem/Components/ExternalComponents/NavBar/Views/subView/DismissToolBarButton.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "3B1D8E05-285C-4811-B574-ABE67EBB4F87 - 18065c9ed5688cf0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in DesignSystem.DismissToolBarButton.body.getter : some"
+                  moduleName = "CharacterChallenge"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ramyomar/Desktop/CharacterChallenge/CharacterChallenge/DesignSystem/Sources/DesignSystem/Components/ExternalComponents/NavBar/Views/subView/DismissToolBarButton.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "284">
+               </Location>
+               <Location
+                  uuid = "3B1D8E05-285C-4811-B574-ABE67EBB4F87 - 18065c9ed5688cf0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in DesignSystem.DismissToolBarButton.body.getter : some"
+                  moduleName = "CharacterChallenge"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ramyomar/Desktop/CharacterChallenge/CharacterChallenge/DesignSystem/Sources/DesignSystem/Components/ExternalComponents/NavBar/Views/subView/DismissToolBarButton.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "496">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "49C42C7B-7505-40DE-AE3D-E7387CFE345E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CharacterChallenge/DesignSystem/Sources/DesignSystem/Components/ExternalComponents/NavBar/Views/subView/DismissToolBarButton.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "body"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

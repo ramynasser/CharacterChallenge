@@ -93,6 +93,7 @@ final class CharactersListViewModel: LoadableObject {
 
             self.characters.append(contentsOf: chars.map {
                 CharacterModel(
+                    id: $0.id ?? 0,
                     name: $0.name ?? "",
                     species: $0.species ?? "",
                     location: $0.location?.name ?? "",

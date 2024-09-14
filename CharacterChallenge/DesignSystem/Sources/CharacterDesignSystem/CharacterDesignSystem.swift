@@ -15,10 +15,9 @@ let characterColor = ColorValueContainer(
     black: Color(hex: "000000"),
     primaryGray: Color(hex: "C3C0D1"),
     secondaryGray: Color(hex: "827C9C"),
-    darkGray: Color(hex: "61CBF4"),
     dangor: Color(hex: "FBE7EB"),
     primaryBlue: Color(hex: "EBF6FB"),
-    secondaryBlue: Color(hex: "EBF6FB")
+    secondaryBlue: Color(hex: "62CBF4")
 )
 
 let characterFont = FontValueContainer(
@@ -94,7 +93,7 @@ let characterSizes = SizeValueContainer(
     small: 50,
     medium: 120,
     large: 130,
-    xlarge: 240
+    xlarge: 300
 )
 let characterCornerRadius = PaddingValueContainer(
     xSmall: 5,

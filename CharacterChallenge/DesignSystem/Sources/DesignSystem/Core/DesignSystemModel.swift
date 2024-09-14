@@ -93,7 +93,6 @@ public struct ColorValueContainer {
     public let black: Color
     public let primaryGray: Color
     public let secondaryGray: Color
-    public let darkGray: Color
     public let dangor: Color
     public let primaryBlue: Color
     public let secondaryBlue: Color
@@ -105,7 +104,6 @@ public struct ColorValueContainer {
         black: Color,
         primaryGray: Color,
         secondaryGray: Color,
-        darkGray: Color,
         dangor: Color,
         primaryBlue: Color,
         secondaryBlue: Color
@@ -116,7 +114,6 @@ public struct ColorValueContainer {
         self.black = black
         self.primaryGray = primaryGray
         self.secondaryGray = secondaryGray
-        self.darkGray = darkGray
         self.dangor = dangor
         self.primaryBlue = primaryBlue
         self.secondaryBlue = secondaryBlue

@@ -22,9 +22,10 @@ class CharactersListViewController: UIViewController {
     @IBOutlet weak var tableViewBottom: NSLayoutConstraint!
     @IBOutlet weak var charactersTableView: UITableView!
     @IBOutlet weak var filterCollectionView: UICollectionView!
-    var loadingDataSource: LoadingDataSource?
-    var populateDataSource: PopulateDataSource?
-    var filterDataSource: FilterDataSource?
+    private var loadingDataSource: LoadingDataSource?
+    private var populateDataSource: PopulateDataSource?
+    private var filterDataSource: FilterDataSource?
+    private var coordinator: CharacterDetailCoordinator?
     
     //MARK: - Init
     init(viewModel: CharactersListViewModel) {
@@ -42,7 +43,14 @@ class CharactersListViewController: UIViewController {
         setupViews()
         viewModelObservers()
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
     private func setupViews() {
         setupNavigationBar()
     }
@@ -51,6 +59,22 @@ class CharactersListViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = "Characters"
     }
+    
+    private func navigate(index: Int) {
+        struct UseCase: CharacterDetailCoordinatorUseCaseProtocol {
+            var characterId: Int
+            var navigationController: UINavigationController?
+        }
+
+        coordinator = CharacterDetailCoordinator(
+            useCase: UseCase(
+                characterId: viewModel.characters[index].id,
+                navigationController: self.navigationController
+            )
+        )
+        coordinator?.start()
+    }
+    
     private func viewModelObservers() {
         viewModel.$state.sink { [weak self] state in
             guard let self = self else {
@@ -63,10 +87,14 @@ class CharactersListViewController: UIViewController {
             case let .loaded(items):
                 self.populateDataSource = PopulateDataSource(
                     tableView: self.charactersTableView,
-                    characters: items, callback: { isPaging in
+                    characters: items, 
+                    callback: { isPaging in
                         if isPaging {
                             self.viewModel.didFinishScroll()
                         }
+                    },
+                    selectionCallBack: { index in
+                        self.navigate(index: index)
                     })
                 self.filterDataSource = FilterDataSource(
                     collectionView: self.filterCollectionView,
