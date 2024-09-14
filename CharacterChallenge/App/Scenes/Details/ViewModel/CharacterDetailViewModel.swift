@@ -12,16 +12,16 @@ import DesignSystem
 
 /// ViewModel responsible for managing the state and business logic for displaying character details.
 final class CharacterDetailViewModel: LoadableObject {
-    
+
     /// The current state of the view, representing different loading or content states.
     @Published var state: ViewState<CharacterModel> = .idle
-    
+
     /// The use case responsible for fetching the character's details.
     private let useCase: GetCharacterDetailUseCaseProtocol
-    
+
     /// A set of cancellables for managing Combine subscriptions.
     private var cancellables = Set<AnyCancellable>()
-    
+
     /// The ID of the character whose details are to be fetched.
     private var characterId: Int
 
@@ -48,10 +48,10 @@ final class CharacterDetailViewModel: LoadableObject {
         await MainActor.run {
             state = .loading
         }
-        
+
         let input = GetCharacterDetailUseCaseInput(id: characterId)
         let result = await useCase.execute(input: input)
-        
+
         // Process the result and update the state accordingly.
         await MainActor.run {
             map(charactersResponse: result)

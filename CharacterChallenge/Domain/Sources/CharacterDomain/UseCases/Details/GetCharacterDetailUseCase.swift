@@ -1,11 +1,9 @@
 //
-//  File.swift
-//  
+//  GetCharacterDetailUseCase.swift
+//
 //
 //  Created by Ramy Nasser on 11/09/2024.
 //
-
-import Foundation
 
 import Foundation
 
@@ -34,7 +32,7 @@ public protocol GetCharacterDetailUseCaseProtocol {
 /// character details by interacting with a repository that conforms to
 /// `CharactersRepoProtocol`.
 public struct GetCharacterDetailUseCase: GetCharacterDetailUseCaseProtocol {
-    
+
     /// The repository used to fetch character details
     ///
     /// This repository is injected via the initializer and will be used to

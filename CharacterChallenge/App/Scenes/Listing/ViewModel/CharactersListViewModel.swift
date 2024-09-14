@@ -14,25 +14,25 @@ import Combine
 final class CharactersListViewModel: LoadableObject {
     /// The current state of the view, representing different loading or content states.
     @Published var state: ViewState<[CharacterModel]> = .idle
-    
+
     /// A flag indicating whether the entire character list has been fully loaded.
     @Published var isListFullLoaded = false
-    
+
     /// The currently selected filter based on character status.
     @Published var selectedFilter: CharacterStatus?
 
     /// An array of characters being displayed in the view.
     var characters: [CharacterModel] = []
-    
+
     /// Available filters for character status.
     var filters: [CharacterStatus] = CharacterStatus.allCases
 
     /// The current page being loaded.
-    private var currentPage: Int = 1
-    
+    var currentPage: Int = 1
+
     /// The total number of pages available.
     private var totalPages: Int = 0
-    
+
     /// The use case responsible for fetching character data.
     private let useCase: GetCharacterListUseCaseProtocol
 
@@ -115,7 +115,9 @@ final class CharactersListViewModel: LoadableObject {
         case let .success(response):
             let chars = response.results
             guard !chars.isEmpty else {
-                state = .empty
+                DispatchQueue.main.async {
+                    self.state = .empty
+                }
                 return
             }
 

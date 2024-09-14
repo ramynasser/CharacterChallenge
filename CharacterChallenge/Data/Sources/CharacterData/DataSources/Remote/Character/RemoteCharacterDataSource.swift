@@ -70,7 +70,7 @@ public struct RemoteCharacterDataSource: CharacterDataSourceProtocol {
         let endpoint = CharacterEndpoint.listing(page: input.page, status: input.status)
         let result: Result<CharactersListResponse.DTO, NetworkRequestError<CharacterError.DTO>>
         result = await networkingManger.executeRequest(endpoint, appErrors: nil).result
-        
+
         // Handling the result from the network request
         switch result {
         case let .success(dto):
@@ -101,7 +101,7 @@ public struct RemoteCharacterDataSource: CharacterDataSourceProtocol {
         let endpoint = CharacterEndpoint.details(id: input.id)
         let result: Result<CharacterDetails.DTO, NetworkRequestError<CharacterError.DTO>>
         result = await networkingManger.executeRequest(endpoint, appErrors: nil).result
-        
+
         // Handling the result from the network request
         switch result {
         case let .success(dto):
