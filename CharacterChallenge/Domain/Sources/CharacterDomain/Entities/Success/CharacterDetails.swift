@@ -6,6 +6,7 @@
 //
 
 import Foundation
+// MARK: - CharacterDetails
 public struct CharacterDetails: Codable {
     public var id: Int?
     public var name: String?
@@ -60,7 +61,7 @@ public struct Location: Codable {
         self.url = url
     }
 }
-
+// MARK: - CharacterStatus
 public enum CharacterStatus: String, Codable, CaseIterable {
     case alive = "Alive"
     case dead = "Dead"

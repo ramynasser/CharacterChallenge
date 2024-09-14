@@ -6,6 +6,7 @@
 //
 
 import Foundation
+// MARK: - CharactersListResponse
 public struct CharactersListResponse: Codable {
     public var info: Info?
     public var results: [CharacterDetails]

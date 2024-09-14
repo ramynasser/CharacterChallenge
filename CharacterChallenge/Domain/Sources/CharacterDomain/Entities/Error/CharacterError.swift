@@ -7,6 +7,7 @@
 import Foundation
 import CoreDomain
 
+/// An enum which holds a different type for character failure .
 public enum CharacterError: AppErrorProtocol {
     case encoding
     case error(message: String)
