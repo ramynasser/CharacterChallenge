@@ -6,5 +6,5 @@
 //
 
 import Foundation
-/// A protocol which used as base for all of erorr
+/// Base protocol for all application errors
 public protocol AppErrorProtocol: Error {}

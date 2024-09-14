@@ -26,7 +26,6 @@ struct CharacterDetailView: View {
                     subTitle: "Something went wrong, Try again!"
                 )
             } emptyContent: {
-                //ic_empty
                 EmptyStateView(
                     icon: Image("ic_empty"),
                     title: "No Data",

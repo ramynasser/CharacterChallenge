@@ -6,5 +6,5 @@
 //
 
 import Foundation
-
+/// A Dependency Injection (DI) container responsible for managing and providing dependencies.
 public class DIContainer {}

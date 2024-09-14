@@ -6,5 +6,5 @@
 //
 
 import Foundation
-
+/// Base protocol for all application repsonse
 public protocol AppResponseProtocol {}
