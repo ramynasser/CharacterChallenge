@@ -12,7 +12,7 @@ import DesignSystem
 
 class LoadingDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     private let cellReuseID = "loadingItemView"
-    
+
     init(
         tableView: UITableView
     ) {
@@ -31,7 +31,12 @@ class LoadingDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
         return 3
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseID, for: indexPath) as! BaseTableViewCell
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: cellReuseID,
+            for: indexPath
+        ) as? BaseTableViewCell else {
+            return UITableViewCell()
+        }
         cell.contentConfiguration = UIHostingConfiguration(content: {
             LoadingView()
         })

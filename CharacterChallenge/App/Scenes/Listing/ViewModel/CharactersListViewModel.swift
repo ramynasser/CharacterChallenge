@@ -37,7 +37,7 @@ final class CharactersListViewModel: LoadableObject {
     func subscribeToFilter() {
         $selectedFilter
             .dropFirst()
-            .sink { [weak self] filter in
+            .sink { [weak self] _ in
                 guard let self = self else { return }
                 applyFilter()
             }
@@ -51,7 +51,7 @@ final class CharactersListViewModel: LoadableObject {
             await self.fetchCharacters(showLoading: true)
         }
     }
-    
+
     func didFinishScroll() {
         guard isListFullLoaded == false else {
             return

@@ -21,7 +21,7 @@ public protocol ResponseHandler {
     var successHandler: SuccessResponseHandlerProtocol { get set }
     var decoder: JSONDecoder { get set }
     var encoder: JSONEncoder { get set }
-    
+
     func handleResponse<T: Decodable, E: Decodable>(
         responeInfo: ResponseInfo
     )

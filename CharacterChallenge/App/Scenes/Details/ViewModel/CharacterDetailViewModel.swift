@@ -14,17 +14,18 @@ final class CharacterDetailViewModel: LoadableObject {
     private let useCase: GetCharacterDetailUseCaseProtocol
     private var cancellables = Set<AnyCancellable>()
     private var characterId: Int
-    
+
     init(useCase: GetCharacterDetailUseCaseProtocol, characterId: Int) {
         self.useCase = useCase
         self.characterId = characterId
     }
+
     func load() {
         Task {
             await self.fetchCharacterDetails()
         }
     }
-    
+
     func fetchCharacterDetails() async {
         await MainActor.run {
             state = .loading
@@ -35,12 +36,12 @@ final class CharacterDetailViewModel: LoadableObject {
             map(charactersResponse: result)
         }
     }
-    
+
     func map(charactersResponse: Result<CharacterDetails, CharacterError>) {
         switch charactersResponse {
         case let .success(response):
             let model = CharacterModel(
-                id: response.id ?? 0, 
+                id: response.id ?? 0,
                 name: response.name ?? "",
                 species: response.species ?? "",
                 location: response.location?.name ?? "",

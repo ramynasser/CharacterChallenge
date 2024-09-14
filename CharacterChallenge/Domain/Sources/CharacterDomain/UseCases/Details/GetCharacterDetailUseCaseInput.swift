@@ -8,7 +8,7 @@
 import Foundation
 public struct GetCharacterDetailUseCaseInput {
     public var id: Int
-    
+
     public init(id: Int) {
         self.id = id
     }

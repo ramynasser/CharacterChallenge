@@ -7,11 +7,11 @@
 import Foundation
 public class ErrorResponseHandler: ErrorResponseHandlerProtocol {
     public var decoder: JSONDecoder
-    
+
     public required init(decoder: JSONDecoder = JSONDecoder()) {
         self.decoder = decoder
     }
-    
+
     public func handle<E: Decodable>(
         requestInfo: ResponseInfo
     )
@@ -21,14 +21,14 @@ public class ErrorResponseHandler: ErrorResponseHandlerProtocol {
         guard requestInfo.statusCode == endPointStatusCode else {
             return handleServiceFailure(statusCode: requestInfo.statusCode)
         }
-        
+
         return handleEndPointError(
             data: requestInfo.data,
             statusCode: requestInfo.statusCode,
             endpointErrors: requestInfo.endpointErrors
         )
     }
-    
+
     func handleServiceFailure<E: Decodable>(statusCode: Int) -> NetworkRequestError<E> {
         switch statusCode {
         case NetworkErrorCode.noContent:
@@ -57,7 +57,7 @@ public class ErrorResponseHandler: ErrorResponseHandlerProtocol {
             return .failure(reason: .other(statusCode: statusCode))
         }
     }
-    
+
     func handleEndPointError<E: Decodable>(
         data: Data?,
         statusCode: Int,

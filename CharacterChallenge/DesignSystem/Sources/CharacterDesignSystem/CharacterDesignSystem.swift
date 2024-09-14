@@ -111,7 +111,7 @@ let characterBorder = SizeValueContainer(
 let characterDesignSystem = DesignSystemModel(
     colors: characterColor,
     fonts: characterFont,
-    padding: characterPadding, 
+    padding: characterPadding,
     cornerRadius: characterCornerRadius,
     size: characterSizes,
     border: characterBorder

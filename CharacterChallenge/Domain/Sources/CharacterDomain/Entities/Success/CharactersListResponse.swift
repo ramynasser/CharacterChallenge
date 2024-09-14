@@ -23,7 +23,7 @@ public struct Info: Codable {
     public let count, pages: Int?
     public let next: String?
     public let prev: String?
-    
+
     public init(
         count: Int?,
         pages: Int?,

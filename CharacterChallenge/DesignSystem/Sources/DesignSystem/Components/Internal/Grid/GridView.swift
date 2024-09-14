@@ -10,16 +10,16 @@ import SwiftUI
 public struct GridView: View {
     public var items: [String]
     @Binding public var selectedItem: String?
-    
+
     public init(items: [String], selectedItem: Binding<String?>) {
         self.items = items
         self._selectedItem = selectedItem
     }
-    
+
     let columns = [
         GridItem(.flexible(), spacing: Fiber.shared.padding.xSmall)
     ]
-    
+
     public var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             LazyHGrid(rows: columns, spacing: Fiber.shared.padding.xSmall) {

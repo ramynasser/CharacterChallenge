@@ -15,8 +15,10 @@ class UIConfigurator: AppDelegateManagable {
 
     func setup() {
         let font = fonts.body.small
-        UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(colors.primary)]
-        
+        UINavigationBar.appearance().largeTitleTextAttributes = [
+            NSAttributedString.Key.foregroundColor: UIColor(colors.primary)
+        ]
+
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.font: font]
     }
 }

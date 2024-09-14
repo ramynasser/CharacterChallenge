@@ -12,9 +12,7 @@ import SwiftUI
 import Core
 
 class CharactersListViewController: UIViewController {
-    private let viewModel: CharactersListViewModel
-    private var cancellables = Set<AnyCancellable>()
-    
+
     @IBOutlet weak var filterCollectionTop: NSLayoutConstraint!
     @IBOutlet weak var filterCollectionLeading: NSLayoutConstraint!
     @IBOutlet weak var filterCollectionTrailing: NSLayoutConstraint!
@@ -22,21 +20,24 @@ class CharactersListViewController: UIViewController {
     @IBOutlet weak var tableViewBottom: NSLayoutConstraint!
     @IBOutlet weak var charactersTableView: UITableView!
     @IBOutlet weak var filterCollectionView: UICollectionView!
+
     private var loadingDataSource: LoadingDataSource?
     private var populateDataSource: PopulateDataSource?
     private var filterDataSource: FilterDataSource?
     private var coordinator: CharacterDetailCoordinator?
-    
+    private let viewModel: CharactersListViewModel
+    private var cancellables = Set<AnyCancellable>()
+
     //MARK: - Init
     init(viewModel: CharactersListViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.load()
@@ -54,12 +55,10 @@ class CharactersListViewController: UIViewController {
     private func setupViews() {
         setupNavigationBar()
     }
-    
     private func setupNavigationBar() {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = "Characters"
     }
-    
     private func navigate(index: Int) {
         struct UseCase: CharacterDetailCoordinatorUseCaseProtocol {
             var characterId: Int
@@ -74,7 +73,7 @@ class CharactersListViewController: UIViewController {
         )
         coordinator?.start()
     }
-    
+
     private func viewModelObservers() {
         viewModel.$state.sink { [weak self] state in
             guard let self = self else {
@@ -83,11 +82,11 @@ class CharactersListViewController: UIViewController {
             switch state {
             case .loading:
                 self.loadingDataSource = LoadingDataSource(tableView: self.charactersTableView)
-    
+
             case let .loaded(items):
                 self.populateDataSource = PopulateDataSource(
                     tableView: self.charactersTableView,
-                    characters: items, 
+                    characters: items,
                     callback: { isPaging in
                         if isPaging {
                             self.viewModel.didFinishScroll()
@@ -98,7 +97,7 @@ class CharactersListViewController: UIViewController {
                     })
                 self.filterDataSource = FilterDataSource(
                     collectionView: self.filterCollectionView,
-                    filters: viewModel.filters, 
+                    filters: viewModel.filters,
                     selectedFilter: viewModel.selectedFilter,
                     callback: { filter in
                         self.viewModel.selectedFilter = filter
@@ -108,7 +107,6 @@ class CharactersListViewController: UIViewController {
                 print("empty")
             default:
                 print("error")
-                
             }
         }
         .store(in: &cancellables)

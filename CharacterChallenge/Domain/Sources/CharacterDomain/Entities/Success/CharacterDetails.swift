@@ -18,7 +18,7 @@ public struct CharacterDetails: Codable {
     public var episode: [String]?
     public var url: String?
     public var created: String?
-    
+
     public init(
         id: Int? = nil,
         name: String? = nil,
@@ -60,7 +60,6 @@ public struct Location: Codable {
         self.url = url
     }
 }
-
 
 public enum CharacterStatus: String, Codable, CaseIterable {
     case alive = "Alive"

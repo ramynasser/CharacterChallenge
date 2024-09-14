@@ -39,7 +39,7 @@ public struct PaddingValueContainer {
     public let large: CGFloat
     public let xLarge: CGFloat
     public init(
-        xSmall: CGFloat, 
+        xSmall: CGFloat,
         small: CGFloat,
         medium: CGFloat,
         large: CGFloat,
@@ -96,7 +96,7 @@ public struct ColorValueContainer {
     public let dangor: Color
     public let primaryBlue: Color
     public let secondaryBlue: Color
-    
+
     public init(
         primary: Color,
         secondary: Color,
@@ -124,8 +124,7 @@ public struct Typography {
     public let fontWeight: CGFloat
     public let fontSize: CGFloat
     public let fontFamily: String
-    
-    
+
     public init(
         lineHeight: CGFloat,
         fontWeight: CGFloat,

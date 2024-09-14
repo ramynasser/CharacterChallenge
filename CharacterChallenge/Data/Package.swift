@@ -35,7 +35,7 @@ let package = Package(
             dependencies: [
                 .product(name: "CharacterDomain", package: "Domain"),
                 .target(name: "ConfigData"),
-                .product(name: "Networking", package: "Core"),
+                .product(name: "Networking", package: "Core")
             ]
         ),
         .testTarget(

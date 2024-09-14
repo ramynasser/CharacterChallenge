@@ -24,7 +24,7 @@ class MainCoordinator: MainCoordinatorProtocol {
         self.useCase = useCase
         window = useCase.window
     }
-    
+
     func start() {
         let viewModel = CharactersListViewModel(useCase: Container.getCharacterListUseCase)
         let initialViewController = CharactersListViewController(viewModel: viewModel)

@@ -23,7 +23,7 @@ extension CharacterModel {
             name: "Ramy",
             species: "Humanoid",
             location: "cairo",
-            gender: "female", 
+            gender: "female",
             status: .alive,
             image: "https://rickandmortyapi.com/api/character/avatar/1.jpeg"
         )

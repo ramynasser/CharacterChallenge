@@ -8,19 +8,19 @@ import SwiftUI
 
 public struct DismissibleNavigationView<Content: View>: View {
     // MARK: - Private properties
-    
+
     private let content: Content
     private let dismissType: DismissType
-    
+
     // MARK: init
-    
+
     public init(dismissType: DismissType, content: () -> Content) {
         self.dismissType = dismissType
         self.content = content()
     }
-    
+
     // MARK: - body
-    
+
     public var body: some View {
         ZStack(alignment: .topLeading) {
             content

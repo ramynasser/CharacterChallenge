@@ -12,7 +12,7 @@ public protocol CharactersRepoProtocol {
     func getListing(_ input: GetCharacterRepoInput
     ) async -> Result<CharactersListResponse,
                       CharacterError>
-    
+
     func getDetails(_ input: GetCharacterDetailRepoInput
     ) async -> Result<CharacterDetails,
                       CharacterError>

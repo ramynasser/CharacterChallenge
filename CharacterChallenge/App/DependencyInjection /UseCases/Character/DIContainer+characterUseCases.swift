@@ -14,7 +14,7 @@ extension Container {
     static var getCharacterListUseCase: GetCharacterListUseCaseProtocol {
         return GetCharacterListUseCase(repo: DIContainer.charactersRepo)
     }
-    
+
     static var getCharacterDetailUseCase: GetCharacterDetailUseCaseProtocol {
         return GetCharacterDetailUseCase(repo: DIContainer.charactersRepo)
     }

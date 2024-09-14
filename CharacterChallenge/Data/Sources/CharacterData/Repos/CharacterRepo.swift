@@ -26,5 +26,4 @@ public struct CharacterRepo: CharactersRepoProtocol {
     ) async -> Result<CharacterDetails, CharacterError> {
         await dataSource.getDetails(input)
     }
-    
 }

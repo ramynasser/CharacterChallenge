@@ -21,7 +21,7 @@ public extension UITableView {
         let lastRowIndex = numberOfRows(inSection: lastSectionIndex) - 1
         return indexPath.section == lastSectionIndex && indexPath.row == lastRowIndex
     }
-    
+
     func showLoadingFooterIfLastCell(at indexPath: IndexPath) {
         if isLastCell(at: indexPath) {
             self.showLoadingFooter()

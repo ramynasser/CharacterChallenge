@@ -19,11 +19,11 @@ public protocol CharacterDataSourceProtocol {
 }
 public struct RemoteCharacterDataSource: CharacterDataSourceProtocol {
     private let networkingManger: NetworkManagerProtocol
-   
+
     public init(networkingManger: NetworkManagerProtocol) {
         self.networkingManger = networkingManger
     }
-    
+
     public func getListing(
         _ input: GetCharacterRepoInput
     ) async -> Result<CharactersListResponse, CharacterError> {
@@ -43,7 +43,7 @@ public struct RemoteCharacterDataSource: CharacterDataSourceProtocol {
             }
         }
     }
-    
+
     public func getDetails(
         _ input: GetCharacterDetailRepoInput
     ) async -> Result<CharacterDetails, CharacterError> {
@@ -63,5 +63,4 @@ public struct RemoteCharacterDataSource: CharacterDataSourceProtocol {
             }
         }
     }
-    
 }

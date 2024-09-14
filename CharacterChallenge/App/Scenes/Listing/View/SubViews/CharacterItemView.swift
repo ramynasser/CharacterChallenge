@@ -10,7 +10,7 @@ import SwiftUI
 import DesignSystem
 struct CharacterItemView: View {
     let character: CharacterModel
-    
+
     var body: some View {
         HStack {
             RemoteImage(url: character.image)
@@ -22,7 +22,7 @@ struct CharacterItemView: View {
                 Text(character.name)
                     .font(fonts.utility.medium)
                     .foregroundColor(colors.primary)
-                
+
                 Text(character.species)
                     .font(fonts.headline.small)
                     .foregroundColor(colors.secondary)
@@ -32,7 +32,12 @@ struct CharacterItemView: View {
             Spacer()
         }
         .frame(height: size.medium)
-        .background(character.status == .alive ? colors.primaryBlue : character.status == .dead ? colors.dangor : Color.clear)
+        .background(
+            character.status == .alive ?
+            colors.primaryBlue :
+            character.status == .dead ?
+            colors.dangor : Color.clear
+        )
         .cornerRadius(fiberCornerRadius.medium)
         .overlay(
             RoundedRectangle(cornerRadius: fiberCornerRadius.medium)

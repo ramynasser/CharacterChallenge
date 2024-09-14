@@ -36,7 +36,7 @@ extension CharactersListResponse: DecodableFromDTO {
         let items = dto.results.map {
             CharacterDetails(from: $0)
         }
-        
+
         let info = Info(from: dto.info)
 
         self = CharactersListResponse(

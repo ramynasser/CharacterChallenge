@@ -22,14 +22,14 @@ class CharacterDetailCoordinator: CharacterDetailCoordinatorProtocol {
     required init(useCase: CharacterDetailCoordinatorUseCaseProtocol) {
         self.useCase = useCase
     }
-    
+
     func start() {
         let viewModel = CharacterDetailViewModel(
             useCase: Container.getCharacterDetailUseCase,
             characterId: useCase.characterId
         )
         let view = CharacterDetailView(viewModel: viewModel)
-        
+
         let hostingController = UIHostingController(rootView: view)
         hostingController.navigationController?.isNavigationBarHidden = true
         useCase.navigationController?.pushViewController(hostingController, animated: true)

@@ -10,19 +10,19 @@ import SwiftUI
 import Core
 import DesignSystem
 typealias DidReachEndCallback = ((Bool) -> Void)
-typealias didSelectCallBack = ((Int) -> Void)
+typealias DidSelectCallBack = ((Int) -> Void)
 
 class PopulateDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     private let cellReuseID = "CharacterItemView"
     private var characters: [CharacterModel]
     private var callback: DidReachEndCallback?
-    private var selectionCallBack: didSelectCallBack?
-    
+    private var selectionCallBack: DidSelectCallBack?
+
     init(
         tableView: UITableView,
         characters: [CharacterModel],
         callback: @escaping DidReachEndCallback,
-        selectionCallBack: @escaping didSelectCallBack
+        selectionCallBack: @escaping DidSelectCallBack
     ) {
         self.characters = characters
         self.callback = callback
@@ -41,7 +41,12 @@ class PopulateDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let character = characters[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseID, for: indexPath) as! BaseTableViewCell
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: cellReuseID,
+            for: indexPath
+        ) as? BaseTableViewCell else {
+            return UITableViewCell()
+        }
         cell.contentConfiguration = UIHostingConfiguration(content: {
             CharacterItemView(character: character)
         })
@@ -64,4 +69,3 @@ class PopulateDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
         selectionCallBack?(indexPath.row)
     }
 }
-

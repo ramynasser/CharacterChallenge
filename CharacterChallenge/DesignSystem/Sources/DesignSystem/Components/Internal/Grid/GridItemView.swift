@@ -9,7 +9,7 @@ import SwiftUI
 public struct GridItemView: View {
     public var text: String
     @Binding public var isSelected: Bool
-    
+
     public var body: some View {
         Text(text)
             .foregroundStyle(Fiber.shared.colors.primary)

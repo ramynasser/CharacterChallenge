@@ -8,13 +8,13 @@
 import SwiftUI
 import DesignSystem
 struct CharacterDetailView: View {
-    
+
     var viewModel: CharacterDetailViewModel
-    
+
     init(viewModel: CharacterDetailViewModel) {
         self.viewModel = viewModel
     }
-    
+
     var body: some View {
         DismissibleNavigationView(dismissType: .back) {
             ContentView(source: viewModel) { model in
@@ -27,17 +27,17 @@ struct CharacterDetailView: View {
             .background(colors.white)
         }
     }
-    
+
 }
 extension CharacterDetailView {
     @ViewBuilder
     func getCotentView(model: CharacterModel) -> some View {
-        VStack(alignment: .leading,spacing: fiberPadding.large) {
+        VStack(alignment: .leading, spacing: fiberPadding.large) {
             RemoteImage(url: model.image)
                 .frame(height: size.xLarge)
                 .clipShape(RoundedRectangle(cornerRadius: fiberCornerRadius.large))
                 .ignoresSafeArea(edges: .top)
-            
+
             // Profile Info
             VStack(alignment: .leading, spacing: fiberPadding.xSmall) {
                 // Name and Status
@@ -45,9 +45,9 @@ extension CharacterDetailView {
                     Text(model.name)
                         .font(fonts.headline.large)
                         .foregroundStyle(colors.primary)
-                    
+
                     Spacer()
-                    
+
                     Text(model.status.rawValue)
                         .font(fonts.body.small)
                         .foregroundStyle(colors.primary)
@@ -55,44 +55,38 @@ extension CharacterDetailView {
                         .background(colors.secondaryBlue)
                         .cornerRadius(fiberCornerRadius.large)
                 }
-                
+
                 // Species and Gender
                 HStack {
                     Text(model.species)
                         .font(fonts.body.medium)
                         .foregroundStyle(colors.secondary)
-                    
+
                     Text("•")
                         .foregroundStyle(colors.secondary)
-                    
+
                     Text(model.gender)
                         .font(fonts.body.medium)
                         .foregroundStyle(colors.secondaryGray)
                 }
-                
+
             }
             .padding(.horizontal, fiberPadding.medium)
-            
-            
+
             // Location
             HStack {
                 Text("Location :")
                     .font(fonts.utility.large)
                     .foregroundStyle(colors.primary)
-                
+
                 Text(model.location)
                     .font(fonts.utility.small)
                     .foregroundStyle(colors.secondary)
             }
             .padding(.horizontal, fiberPadding.medium)
-            
+
             Spacer() // Push content to the top
         }
         .padding(.top, fiberPadding.medium)
     }
 }
-//struct ProfileView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CharacterDetailView(viewModel: <#CharacterDetailViewModel#>)
-//    }
-//}
