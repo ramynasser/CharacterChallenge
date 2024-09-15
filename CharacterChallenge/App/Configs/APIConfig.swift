@@ -1,8 +1,8 @@
 //
 //  APIConfig.swift
-//  iMovies
+//  CharacterChallenge
 //
-//  Created by Taha Mahmoud on 19/01/2024.
+//  Created by Ramy Nasser on 10/09/2024.
 //
 
 import Foundation

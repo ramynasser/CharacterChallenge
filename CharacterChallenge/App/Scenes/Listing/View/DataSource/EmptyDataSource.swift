@@ -24,7 +24,7 @@ class EmptyDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return size.medium
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -40,8 +40,10 @@ class EmptyDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
             EmptyStateView
                 .Builder()
                 .setIcon(Image("ic_empty"))
-                .setTitle("No Data")
-                .setSubTitle("No Data To Show")
+                .setTitle("No Data Available")
+                .setSubTitle(
+                    "It looks like we couldn't find any characters. Please try refreshing the view"
+                )
                 .build()
         })
         cell.selectionStyle = .none

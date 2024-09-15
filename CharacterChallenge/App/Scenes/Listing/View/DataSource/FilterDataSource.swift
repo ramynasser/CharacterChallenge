@@ -60,7 +60,7 @@ class FilterDataSource: NSObject,
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: UIScreen.main.bounds.width, height: 50)
+        CGSize(width: UIScreen.main.bounds.width, height: size.small)
     }
 
 }

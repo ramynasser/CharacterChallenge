@@ -15,17 +15,17 @@ typealias DidSelectCallBack = ((Int) -> Void)
 class PopulateDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     private let cellReuseID = "CharacterItemView"
     private var characters: [CharacterModel]
-    private var callback: DidReachEndCallback?
+    private var pagingCallback: DidReachEndCallback?
     private var selectionCallBack: DidSelectCallBack?
 
     init(
         tableView: UITableView,
         characters: [CharacterModel],
-        callback: @escaping DidReachEndCallback,
+        pagingCallback: @escaping DidReachEndCallback,
         selectionCallBack: @escaping DidSelectCallBack
     ) {
         self.characters = characters
-        self.callback = callback
+        self.pagingCallback = pagingCallback
         self.selectionCallBack = selectionCallBack
         super.init()
         tableView.register(
@@ -63,7 +63,7 @@ class PopulateDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let isReachingEnd = scrollView.didReachEnd
-        callback?(isReachingEnd)
+        pagingCallback?(isReachingEnd)
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectionCallBack?(indexPath.row)

@@ -10,7 +10,7 @@ import SwiftUI
 public struct EmptyStateView: View {
     public var icon: Image?
     public var title: String?
-    public var titleColor: Color = Fiber.shared.colors.white
+    public var titleColor: Color = Fiber.shared.colors.primary
     public var subTitle: String?
     public var subTitleColor: Color = Fiber.shared.colors.secondaryGray
 
@@ -96,6 +96,7 @@ public struct EmptyStateView: View {
                     .multilineTextAlignment(.center)
             }
         }
+        .frame(maxWidth: .infinity)
         .padding(50)
     }
 }
