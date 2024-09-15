@@ -72,9 +72,8 @@ class CharactersListViewController: UIViewController {
                 self.loadingDataSource = LoadingDataSource(tableView: self.charactersTableView)
 
             case let .loaded(items):
-                emptyDataSource = EmptyDataSource(tableView: self.charactersTableView)
-            case .empty:
-                emptyDataSource = EmptyDataSource(tableView: self.charactersTableView)
+                setupPopulateDataSource(items: items)
+                setupFilterDataSource()
             default:
                 emptyDataSource = EmptyDataSource(tableView: self.charactersTableView)
             }

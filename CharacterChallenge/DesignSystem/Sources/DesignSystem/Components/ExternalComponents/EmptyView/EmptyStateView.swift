@@ -18,9 +18,9 @@ public struct EmptyStateView: View {
     private init(
         icon: Image? = nil,
         title: String? = nil,
-        titleColor: Color = Fiber.shared.colors.white,
+        titleColor: Color = Fiber.shared.colors.primary,
         subTitle: String? = nil,
-        subTitleColor: Color = Fiber.shared.colors.secondaryGray
+        subTitleColor: Color = Fiber.shared.colors.primaryGray
     ) {
         self.icon = icon
         self.title = title
@@ -33,7 +33,7 @@ public struct EmptyStateView: View {
     public class Builder {
         private var icon: Image?
         private var title: String?
-        private var titleColor: Color = Fiber.shared.colors.white
+        private var titleColor: Color = Fiber.shared.colors.primary
         private var subTitle: String?
         private var subTitleColor: Color = Fiber.shared.colors.secondaryGray
 
@@ -97,7 +97,7 @@ public struct EmptyStateView: View {
             }
         }
         .frame(maxWidth: .infinity)
-        .padding(50)
+        .padding(Fiber.shared.padding.xLarge)
     }
 }
 
